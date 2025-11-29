@@ -1,0 +1,14 @@
+Color replacement mappings for logo gradient scheme:
+
+OLD -> NEW:
+#004C91 -> #5B4FE6 (purple/blue)
+#00BFA6 -> #1DB4D2 (cyan)
+#FF7B00 -> Keep for some, or use gradient from-[#1DB4D2] to-[#5B4FE6]
+
+Gradient backgrounds:
+from-[#004C91] to-[#003366] -> from-[#1DB4D2] to-[#5B4FE6]
+from-[#FF7B00] to-[#FF9500] -> from-[#1DB4D2] to-[#5B4FE6]
+from-[#004C91] to-[#00BFA6] -> from-[#1DB4D2] to-[#5B4FE6]
+
+Icon/badge colors:
+bg-[#FF7B00] -> bg-gradient-to-r from-[#1DB4D2] to-[#5B4FE6] OR bg-[#5B4FE6]
