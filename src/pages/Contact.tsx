@@ -5,7 +5,8 @@ import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
 import { Textarea } from "../components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
-import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa6";
 import { toast } from "sonner@2.0.3";
 import HomeImage from '../assets/bg.png';
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
@@ -18,8 +19,8 @@ export function Contact({ onNavigate }: ContactProps) {
   const contactStyles = `
     @media (min-width: 768px) {
       .contact-info-section {
-        padding-left: 40px;
-        padding-right: 40px;
+        padding-left: 80px;
+        padding-right: 80px;
       }
     }
   `;
@@ -221,14 +222,16 @@ export function Contact({ onNavigate }: ContactProps) {
                     <Button
                       onClick={() => window.open("https://wa.me/919876543210", "_blank")}
                       className="w-full bg-[#25D366] hover:bg-[#25D366]/90 text-white"
+                      style={{borderRadius:'5px'}}
                     >
-                      <MessageCircle className="w-5 h-5 mr-2" />
+                      <FaWhatsapp className="w-10 h-10 mr-2" style={{width:'25px',height:'25px'}}/>
                       Chat on WhatsApp
                     </Button>
                     <Button
                       onClick={() => window.location.href = "tel:+919876543210"}
                       variant="outline"
-                      className="w-full border-white text-white hover:bg-white hover:text-[#004C91]"
+                      className="w-full border-white text-[#004C91]"
+                      style={{borderRadius:'5px'}}
                     >
                       <Phone className="w-5 h-5 mr-2" />
                       Call Us Now
