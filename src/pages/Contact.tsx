@@ -7,6 +7,8 @@ import { Textarea } from "../components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
 import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
 import { toast } from "sonner@2.0.3";
+import HomeImage from '../assets/bg.png';
+import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 interface ContactProps {
   onNavigate: (page: string) => void;
@@ -61,9 +63,17 @@ export function Contact({ onNavigate }: ContactProps) {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero */}
-      <section className="bg-gradient-to-r from-[#004C91] to-[#003366] text-white py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-white mb-4">Get in Touch</h1>
+      <section className="relative h-auto md:h-[400px] flex items-center justify-center overflow-hidden" style={{ marginTop: '-5rem', paddingTop: '5rem' }}>
+        <ImageWithFallback
+                  src={HomeImage}
+                  alt="Travel Packages Background"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  style={{ objectPosition: 'center' }}
+                />
+                <div className="absolute inset-0 bg-black/40" />
+        <div className="container mx-auto px-4 text-center relative z-10"
+        style={{paddingTop: '3rem',paddingBottom:'3rem'}}>
+          <h1 className="text-white mb-4" style={{ fontSize: 'clamp(1.5rem, 5vw, 3rem)', fontWeight: 700 }}>Get in Touch</h1>
           <p className="text-white/90 max-w-2xl mx-auto">
             Have questions? We're here to help. Reach out and let's plan your perfect trip together.
           </p>
@@ -192,7 +202,9 @@ export function Contact({ onNavigate }: ContactProps) {
             {/* Additional Info & Map */}
             <div className="space-y-6">
               {/* Quick Actions */}
-              <Card className="bg-gradient-to-br from-[#004C91] to-[#00BFA6] text-white">
+              <Card className="text-white"
+              style={{background : 'linear-gradient(to right, #004C91, #00BFA6)'}}
+              >
                 <CardContent className="p-8">
                   <h3 className="text-white mb-6">Prefer Instant Communication?</h3>
                   <div className="space-y-4">

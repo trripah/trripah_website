@@ -30,7 +30,7 @@ export function PackageCard({
   onViewDetails,
 }: PackageCardProps) {
   return (
-    <Card className="overflow-hidden hover:shadow-xl transition-shadow">
+    <Card className="overflow-hidden hover:shadow-xl transition-shadow" style={{borderRadius:'5px'}}>
       <div className="relative h-56 overflow-hidden">
         <ImageWithFallback
           src={image}

@@ -8,6 +8,15 @@ interface AboutProps {
 }
 
 export function About({ onNavigate }: AboutProps) {
+  const aboutStyles = `
+    @media (min-width: 768px) {
+      .about-values {
+        padding-left: 4rem;
+        padding-right: 4rem;
+      }
+    }
+  `;
+
   const values = [
     {
       icon: Heart,
@@ -70,18 +79,21 @@ export function About({ onNavigate }: AboutProps) {
 
   return (
     <div className="min-h-screen">
+      <style>{aboutStyles}</style>
       {/* Hero */}
-      <section className="relative h-[400px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[400px] flex items-center justify-center overflow-hidden" style={{ marginTop: '-5rem', paddingTop: '5rem' }}>
         <div className="absolute inset-0">
           <ImageWithFallback
             src="https://images.unsplash.com/photo-1709572366321-524da39b27e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmF2ZWwlMjBhZHZlbnR1cmUlMjBoYXBweSUyMHRvdXJpc3RzfGVufDF8fHx8MTc2MTgyMDk4OHww&ixlib=rb-4.1.0&q=80&w=1080"
             alt="About trripah"
             className="w-full h-full object-cover"
+            style={{ objectPosition: 'center 30%' }}
           />
-          <div className="absolute inset-0 bg-black/50" />
+
+          <div className="absolute inset-0 bg-black/40" />
         </div>
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
-          <h1 className="text-white mb-4">About trripah</h1>
+          <h1 className="text-white mb-4" style={{ fontSize: 'clamp(1.5rem, 5vw, 3rem)', fontWeight: 700 }}>About trripah</h1>
           <p className="text-white/90 max-w-2xl mx-auto" style={{ fontSize: '1.25rem' }}>
             Making travel dreams come true, one journey at a time
           </p>
@@ -89,11 +101,11 @@ export function About({ onNavigate }: AboutProps) {
       </section>
 
       {/* Our Story */}
-      <section className="py-16 bg-white">
+      <section className="py-6 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="mb-4">Our Story</h2>
+              <h2 className="mb-4" style={{ fontSize: '2rem', fontWeight: 700 }}>Our Story</h2>
             </div>
             <div className="space-y-6 text-gray-700 leading-relaxed">
               <p>
@@ -117,7 +129,9 @@ export function About({ onNavigate }: AboutProps) {
       </section>
 
       {/* Stats */}
-      <section className="py-16 bg-gradient-to-r from-[#004C91] to-[#003366] text-white">
+      <section className="py-16  text-white"
+      style={{background: 'linear-gradient(to right, #004C91, #003366)'}}
+      >
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -133,7 +147,7 @@ export function About({ onNavigate }: AboutProps) {
       </section>
 
       {/* Our Values */}
-      <section className="py-16 bg-[#FFF3E0]">
+      <section className="py-16 bg-[#FFF3E0] about-values">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="mb-4">What We Stand For</h2>
@@ -161,7 +175,9 @@ export function About({ onNavigate }: AboutProps) {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <Card className="bg-gradient-to-br from-[#004C91] to-[#00BFA6] text-white">
+            <Card className=" text-white"
+            style={{background: 'linear-gradient(to bottom right, #004C91, #00BFA6)'}}
+            >
               <CardContent className="p-12 text-center">
                 <h2 className="text-white mb-6">Our Promise to You</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
@@ -253,9 +269,11 @@ export function About({ onNavigate }: AboutProps) {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-[#FF7B00] to-[#FF9500] text-white">
+      <section className="py-20 text-white"
+      style={{background: 'linear-gradient(to right, #FF7B00, #FF9500)'}}
+      >
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-white mb-4">Ready to Start Your Adventure?</h2>
+          <h2 className="text-white mb-4" style={{fontSize:'2rem',fontWeight:700}}>Ready to Start Your Adventure?</h2>
           <p className="text-white/90 mb-8 max-w-2xl mx-auto">
             Join thousands of happy travelers who trusted us with their journeys
           </p>
@@ -271,7 +289,7 @@ export function About({ onNavigate }: AboutProps) {
               onClick={() => onNavigate("contact")}
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-[#FF7B00]"
+              className="border-white text-[#FF7B00]"
             >
               Contact Us
             </Button>

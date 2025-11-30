@@ -23,14 +23,15 @@ export function DestinationCard({
 }: DestinationCardProps) {
   return (
     <Card
-      className="overflow-hidden cursor-pointer transition-transform hover:scale-105 hover:shadow-xl"
+      className="overflow-hidden cursor-pointer"
       onClick={onClick}
+      style={{ borderRadius: '5px' }}
     >
-      <div className="relative h-64 overflow-hidden">
+      <div className="relative h-64 overflow-hidden group">
         <ImageWithFallback
           src={image}
           alt={name}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
         />
         <div className="absolute top-4 right-4">
           <Badge className="bg-gradient-to-r from-[#1DB4D2] to-[#5B4FE6] text-white hover:opacity-90">

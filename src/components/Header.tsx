@@ -57,10 +57,15 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
             <button
               key={item.path}
               onClick={() => onNavigate(item.path)}
-              className={`transition-colors ${
-                currentPage === item.path ? "text-[#5B4FE6]" : "text-white"
-              }`}
-              style={{fontSize: '1rem', fontWeight: '500', cursor: 'pointer'}}
+              className="transition-colors text-white"
+              style={{
+                fontSize: '1rem',
+                fontWeight: '500',
+                cursor: 'pointer',
+                border: currentPage === item.path ? '1.5px solid white' : 'none',
+                borderRadius: currentPage === item.path ? '5px' : '0',
+                padding: currentPage === item.path ? '4px 8px' : '0'
+              }}
             >
               {item.name}
             </button>
