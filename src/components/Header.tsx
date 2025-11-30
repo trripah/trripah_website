@@ -62,8 +62,8 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
                 fontSize: '1rem',
                 fontWeight: '500',
                 cursor: 'pointer',
-                border: currentPage === item.path ? '1.5px solid white' : 'none',
-                borderRadius: currentPage === item.path ? '5px' : '0',
+                borderBottom: currentPage === item.path ? '1.5px solid white' : 'none',
+                // borderRadius: currentPage === item.path ? '5px' : '0',
                 padding: currentPage === item.path ? '4px 8px' : '0'
               }}
             >

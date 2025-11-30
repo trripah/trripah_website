@@ -36,14 +36,14 @@ export function Footer({ onNavigate }: FooterProps) {
               >
                 <Youtube className="w-5 h-5" />
               </a>
-              <a
+              {/* <a
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialLink}
               >
                 <Facebook className="w-5 h-5" />
-              </a>
+              </a> */}
             </div>
           </div>
 
@@ -79,6 +79,13 @@ export function Footer({ onNavigate }: FooterProps) {
                   Travel Blog
                 </button>
               </li>
+              <li className={styles.linkItem}>
+                <button
+                  onClick={() => onNavigate("reviews")}
+                >
+                  Reviews
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -94,13 +101,6 @@ export function Footer({ onNavigate }: FooterProps) {
                 </button>
               </li>
               <li className={styles.linkItem}>
-                <button
-                  onClick={() => onNavigate("reviews")}
-                >
-                  Reviews
-                </button>
-              </li>
-              <li className={styles.linkItem}>
                 <a href="#">
                   Terms & Conditions
                 </a>
@@ -113,6 +113,11 @@ export function Footer({ onNavigate }: FooterProps) {
               <li className={styles.linkItem}>
                 <a href="#">
                   Refund Policy
+                </a>
+              </li>
+              <li className={styles.linkItem}>
+                <a href="#">
+                  Cancelation policy
                 </a>
               </li>
             </ul>

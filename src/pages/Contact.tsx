@@ -15,6 +15,15 @@ interface ContactProps {
 }
 
 export function Contact({ onNavigate }: ContactProps) {
+  const contactStyles = `
+    @media (min-width: 768px) {
+      .contact-info-section {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+    }
+  `;
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -62,6 +71,7 @@ export function Contact({ onNavigate }: ContactProps) {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <style>{contactStyles}</style>
       {/* Hero */}
       <section className="relative h-auto md:h-[400px] flex items-center justify-center overflow-hidden" style={{ marginTop: '-5rem', paddingTop: '5rem' }}>
         <ImageWithFallback
@@ -81,7 +91,7 @@ export function Contact({ onNavigate }: ContactProps) {
       </section>
 
       {/* Contact Info Cards */}
-      <section className="py-16">
+      <section className="py-16 contact-info-section">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {contactInfo.map((info, index) => (

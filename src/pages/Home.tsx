@@ -13,6 +13,8 @@ import KeralaImage from '../assets/karela.jpg';
 import TamilnaduImage from '../assets/tamilnadu.jpg';
 import NorthEast from '../assets/northEast.jpg'
 import Rajastan from '../assets/rajastan.jpg'
+import India from '../assets/India Flag.svg'
+import World from '../assets/world-map.svg'
 
 interface HomeProps {
   onNavigate: (page: string, data?: any) => void;
@@ -280,7 +282,7 @@ export function Home({ onNavigate }: HomeProps) {
                       Vietnam, Bali & Dubai
                   </p>
               </div>
-              <div className="w-full md:w-[40%] md:px-4 flex justify-center md:justify-end" style={{ width: '100%', maxWidth: '400px' }}> 
+              <div className="w-full md:w-[40%] md:px-4 flex justify-center md:justify-end" style={{ width: '100%', maxWidth: '400px', }}> 
                   <Card className="w-full border-none bg-white rounded-sm" style={{ boxShadow: '0 10px 20px rgba(0, 0, 0, 0.9)' }}>
                       <CardContent className="px-4 py-2">
                           <div className="mb-6 space-y-2">
@@ -347,18 +349,26 @@ export function Home({ onNavigate }: HomeProps) {
                 onClick={() => setActiveTab("international")}
                 style={{
                   ...(activeTab === "international" ? styles.activeTab : styles.inactiveTab),
-                  borderRadius: '4px 0px 0px 4px'
+                  borderRadius: '4px 0px 0px 4px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '1rem'
                 }}
               >
+                <img src={World} alt="World" style={{ height: '20px', width: '20px' }} />
                 International
               </button>
               <button 
                 onClick={() => setActiveTab("india")}
                 style={{
                   ...(activeTab === "india" ? styles.activeTab : styles.inactiveTab),
-                  borderRadius: '0px 4px 4px 0px'
+                  borderRadius: '0px 4px 4px 0px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '1rem'
                 }}
               >
+                <img src={India} alt="India" style={{ height: '20px', width: '20px' }} />
                 Incredible India
               </button>
             </div>
@@ -383,11 +393,11 @@ export function Home({ onNavigate }: HomeProps) {
                     style={styles.cardImage}
                     className="transition-transform group-hover:scale-110 duration-300"
                   />
-                  {destination.discount && (
+                  {/* {destination.discount && (
                     <div style={styles.discountBadge}>
                       {destination.discount}
                     </div>
-                  )}
+                  )} */}
                   <div style={styles.cardOverlay}>
                     <h3 style={styles.cardTitle}>{destination.name}</h3>
                     <p style={styles.cardPrice}>Starts at {destination.startingPrice} <span style={{fontSize: '0.8rem', fontWeight: 400}}>per person</span></p>
@@ -610,7 +620,7 @@ export function Home({ onNavigate }: HomeProps) {
         }
         @media (min-width: 1024px) {
           [data-hero-content] {
-            padding-inline: 5rem;
+            padding-inline: 10rem;
           }
         }
         @media (max-width: 768px) {
@@ -732,7 +742,7 @@ const styles = {
   activeTab: {
     background: 'linear-gradient(to right, #2B70E4, #094CBE)',
     color: '#fff',
-    padding: '10px 60px',
+    padding: '10px 40px',
     border: 'none',
     fontSize: '1rem',
     fontWeight: '500',
@@ -742,7 +752,7 @@ const styles = {
   inactiveTab: {
     backgroundColor: '#f3f4f6',
     color: '#333',
-    padding: '10px 60px',
+    padding: '10px 40px',
     border: 'none',
     fontSize: '1rem',
     fontWeight: '500',
