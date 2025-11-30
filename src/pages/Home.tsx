@@ -365,12 +365,13 @@ export function Home({ onNavigate }: HomeProps) {
           </div>
 
           <div style={styles.destinationCarouselContainer} data-destination-carousel>
-            {destinations.map((destination) => (
+            {destinations.map((destination, index) => (
               <div 
                 key={destination.id}
                 style={{
                   ...styles.destinationCardContainer,
-                  animation: 'flipCard 0.6s ease-in-out',
+                  animation: 'flipCard 0.6s ease-in-out forwards',
+                  animationDelay: `${index * 0.1}s`,
                 }}
                 onClick={() => onNavigate("destinations")}
                 className="group"
@@ -443,14 +444,14 @@ export function Home({ onNavigate }: HomeProps) {
                     className="transition-transform group-hover:scale-110 duration-300"
                   />
                   {pkg.discount && (
-                    <div style={styles.discountBadge}>
+                    <div style={styles.discountBadge1}>
                       {pkg.discount}
                     </div>
                   )}
                   <div style={styles.cardOverlay}>
                     {/* Using Destination Name to match the visual style of the screenshot "Thailand" */}
-                    <h3 style={styles.cardTitle}>{pkg.destination}</h3>
-                    <p style={styles.cardPrice}>Starts at {pkg.price} <span style={{fontSize: '0.8rem', fontWeight: 400}}>per person</span></p>
+                    <h3 style={styles.cardTitle1}>{pkg.destination}</h3>
+                    <p style={styles.cardPrice1}>Starts at {pkg.price} <span style={{fontSize: '0.8rem', fontWeight: 400}}>per person</span></p>
                   </div>
                 </div>
               </div>
@@ -589,7 +590,7 @@ export function Home({ onNavigate }: HomeProps) {
         @keyframes flipCard {
           0% {
             transform: rotateY(0deg) scale(1);
-            opacity: 1;
+            opacity: 0;
           }
           50% {
             transform: rotateY(90deg) scale(1);
@@ -812,13 +813,39 @@ const styles = {
     fontSize: '1.75rem',
     fontWeight: '600',
     marginBottom: '4px',
+    transform: 'scaleX(-1)',
+  },
+  cardTitle1: {
+    color: 'white',
+    fontSize: '1.75rem',
+    fontWeight: '600',
+    marginBottom: '4px',
   },
   cardPrice: {
     color: 'rgba(255,255,255,0.9)',
     fontSize: '1rem',
     fontWeight: '500',
+    transform: 'scaleX(-1)',
+  },
+  cardPrice1: {
+    color: 'rgba(255,255,255,0.9)',
+    fontSize: '1rem',
+    fontWeight: '500',
   },
   discountBadge: {
+    position: 'absolute' as 'absolute',
+    top: '10px',
+    right: '10px',
+    backgroundColor: '#ff4757',
+    color: 'white',
+    padding: '8px 12px',
+    borderRadius: '4px',
+    fontSize: '0.85rem',
+    fontWeight: '600',
+    zIndex: 10,
+    transform: 'scaleX(-1)',
+  },
+  discountBadge1: {
     position: 'absolute' as 'absolute',
     top: '10px',
     right: '10px',
