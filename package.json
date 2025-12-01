@@ -58,7 +58,11 @@
             "vite": "6.3.5"
       },
       "scripts": {
-            "dev": "vite",
-            "build": "vite build"
-      }
+   	 	"start": "react-scripts start", // This is your local development start command
+  		 "build": "react-scripts build",
+    		"test": "react-scripts test",
+    		"eject": "react-scripts eject",
+		"predeploy": "npm run build", // Add this line
+    		"deploy": "gh-pages -d build" // Add this line
+  	}
 }
