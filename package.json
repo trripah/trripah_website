@@ -1,6 +1,9 @@
 {
       "name": "trripah-travel-website",
       "version": "0.1.0",
+      "engines": {
+            "node": ">=18.0.0"
+      },
       "private": true,
       "dependencies": {
             "@radix-ui/react-accordion": "^1.2.3",
