@@ -32,5 +32,37 @@
 
   If you prefer not to use Docker, you can also deploy the built static site directly as a Static Site on App Platform (Build command: `npm run build`, Publish directory: `build`) — just make sure to configure a rewrite/fallback to `index.html` for SPA routes.
 
+  Size / node_modules notes:
+
+  - I removed an unused dependency (`docker`) and moved Tailwind build plugins into `devDependencies` to reduce install footprint when App Platform runs installs.
+  - If you're deploying as a static site (no Docker), App Platform will run a full `npm install` during the build; to minimize size, you can:
+    - Use a Docker build (recommended) so final image only contains the static `build/` output.
+    - Or update the repo to use a lighter package manager (pnpm) or split out big optional packages.
+
+  To refresh lockfile locally after these changes run:
+
+  ```powershell
+  npm install
+  ```
+
+  If you want to locally prune node_modules to only production deps (not needed for Docker-based deploy where build happens inside the image) run:
+
+  ```powershell
+  npm ci --omit=dev
+  ```
+
+  Check Docker image size locally (once you have Docker installed):
+
+  ```powershell
+  docker build -t trripah-website:latest .
+  docker images trripah-website --format "{{.Repository}}: {{.Tag}} — {{.Size}}"
+  ```
+
+  If the image is larger than 120MB and you want me to help further reduce it, I can:
+
+  - Remove or replace large runtime libraries (e.g. charts, icons) if those features aren't required.
+  - Migrate the project to pnpm which drastically reduces disk usage in installs.
+  - Add a CI job that builds a Docker image for you and prints the image size so you can monitor regressions.
+
 # trripah_website
 Main website of trripah
