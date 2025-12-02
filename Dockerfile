@@ -8,11 +8,11 @@ WORKDIR /app
 COPY package*.json ./
 
 # If lockfile exists use npm ci, otherwise fallback to npm install
-RUN if [ -f package-lock.json ]; then npm ci --no-audit --no-fund; else npm install --no-audit --no-fund; fi
+RUN if [ -f package-lock.json ]; then npm ci; else npm install; fi
 
 # Copy app sources and run the build
 COPY . .
-RUN npm run build && npm cache clean --force
+RUN npm run build
 
 
 # --- Production stage ---
