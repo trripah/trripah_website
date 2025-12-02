@@ -58,6 +58,6 @@
       "scripts": {
             "dev": "vite",
             "convert-images": "node ./scripts/convert-images.js",
-            "build": "vite build"
+            "build": "npm run convert-images && vite build"
       }
 }
