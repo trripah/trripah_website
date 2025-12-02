@@ -4,7 +4,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { Slider } from "../components/ui/slider";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
-import HomeImage from '../assets/bg.webp';
+import HomeImage from '../assets/bg.png';
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 interface PackagesProps {

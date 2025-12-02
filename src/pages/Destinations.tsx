@@ -2,7 +2,7 @@ import { useState } from "react";
 import { DestinationCard } from "../components/DestinationCard";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
 import { Button } from "../components/ui/button";
-import HomeImage from '../assets/bg.webp';
+import HomeImage from '../assets/bg.png';
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 interface DestinationsProps {
