@@ -21,7 +21,7 @@ export function Footer({ onNavigate }: FooterProps) {
             </p>
             <div className={styles.socialLinks}>
               <a
-                href="https://www.instagram.com/trripah.travel/"
+                href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialLink}
@@ -29,7 +29,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="https://www.youtube.com/@Trripahtalks"
+                href="https://youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialLink}
@@ -130,23 +130,23 @@ export function Footer({ onNavigate }: FooterProps) {
               <li className={styles.contactItem}>
                 <Phone className={styles.contactIcon} />
                 <div>
-                  <a href="tel:+917676355255" className={styles.contactLink}>
-                    +91 7676 355 255
+                  <a href="tel:+919876543210" className={styles.contactLink}>
+                    +91 98765 43210
                   </a>
                 </div>
               </li>
               <li className={styles.contactItem}>
                 <Mail className={styles.contactIcon} />
                 <div>
-                  <a href="mailto:trripah@gmail.com" className={styles.contactLink}>
-                    trripah@gmail.com
+                  <a href="mailto:hello@trripah.com" className={styles.contactLink}>
+                    hello@trripah.com
                   </a>
                 </div>
               </li>
               <li className={styles.contactItem}>
                 <MapPin className={styles.contactIcon} />
                 <div className={styles.contactText}>
-                  Benagluru, Karnataka, India
+                  Mumbai, Maharashtra, India
                 </div>
               </li>
             </ul>
