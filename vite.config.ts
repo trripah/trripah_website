@@ -2,10 +2,11 @@
   import { defineConfig } from 'vite';
   import react from '@vitejs/plugin-react-swc';
   import path from 'path';
-  import tailwindcss from '@tailwindcss/vite'
 
   export default defineConfig({
-    plugins: [react(),tailwindcss(),],
+    // removed @tailwindcss/vite plugin (ESM) to avoid runtime require() issues in some CI
+    // Tailwind is now integrated using PostCSS (postcss.config.cjs)
+    plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       alias: {
