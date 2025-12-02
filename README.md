@@ -58,6 +58,25 @@
   docker images trripah-website --format "{{.Repository}}: {{.Tag}} — {{.Size}}"
   ```
 
+  Image conversion (JPG/PNG → high-quality WebP)
+
+  This repo includes a small Node script that converts all .jpg/.jpeg/.png files in `src/assets` to high-quality WebP files before building. That means your production `build/` will contain .webp images which are much smaller than the original JPEG/PNG assets.
+
+  Commands:
+
+  ```powershell
+  # Convert images locally
+  npm run convert-images
+
+  # Or run a full build (conversion runs automatically before build)
+  npm run build
+  ```
+
+  Notes:
+  - Conversion quality is set to 65 (balanced quality/size) in `scripts/convert-images.js` — lower the number if you want smaller files.
+  - If you prefer to remove original JPG/PNG files from the repo after conversion, I can add a cleanup step (but I kept originals so you have a source copy).
+  - I removed `sharp` from devDependencies to reduce local/node_modules size after converting and committing optimized WebP assets. If you want to re-run the conversion later, install sharp again locally (npm i -D sharp) before running `npm run convert-images`.
+
   If the image is larger than 120MB and you want me to help further reduce it, I can:
 
   - Remove or replace large runtime libraries (e.g. charts, icons) if those features aren't required.

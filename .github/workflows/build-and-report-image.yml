@@ -1,0 +1,38 @@
+name: Build and report Docker image size
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build-and-report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build Docker image (no push)
+        id: build
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: false
+          tags: trripah-website:latest
+
+      - name: List docker images and report size
+        run: |
+          echo "== Images for trripah-website =="
+          docker images trripah-website --format "{{.Repository}}:{{.Tag}} - {{.Size}}"
+
+      - name: Output build cache info (diagnostics)
+        run: |
+          docker system df || true

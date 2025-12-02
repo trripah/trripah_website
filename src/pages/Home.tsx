@@ -7,12 +7,12 @@ import { PackageCard } from "../components/PackageCard";
 import { TestimonialCard } from "../components/TestimonialCard";
 import { Search, Shield, HeadphonesIcon, Sparkles } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
-import HomeImage from '../assets/bg.png';
-import GoaImage from '../assets/goa.jpg';
-import KeralaImage from '../assets/karela.jpg';
-import TamilnaduImage from '../assets/tamilnadu.jpg';
-import NorthEast from '../assets/northEast.jpg'
-import Rajastan from '../assets/rajastan.jpg'
+import HomeImage from '../assets/bg.webp';
+import GoaImage from '../assets/goa.webp';
+import KeralaImage from '../assets/karela.webp';
+import TamilnaduImage from '../assets/tamilnadu.webp';
+import NorthEast from '../assets/northEast.webp'
+import Rajastan from '../assets/rajastan.webp'
 import India from '../assets/India Flag.svg'
 import World from '../assets/world-map.svg'
 
