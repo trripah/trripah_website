@@ -43,28 +43,28 @@ export function Contact({ onNavigate }: ContactProps) {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+91 98765 43210", "+91 98765 43211"],
+      details: ["+91 7676 355 255", "+91 8310 214 579"],
       action: "Call us",
-      link: "tel:+919876543210",
+      link: "tel:+91767355255",
     },
     {
       icon: Mail,
       title: "Email",
-      details: ["hello@trripah.com", "support@trripah.com"],
+      details: ["trripah@gmail.com", "contact@trripah.com"],
       action: "Send email",
-      link: "mailto:hello@trripah.com",
+      link: "mailto:trripah@gmail.com",
     },
     {
       icon: MapPin,
       title: "Office",
-      details: ["123 Travel Street", "Mumbai, Maharashtra 400001"],
+      details: ["Tejas Arcade, 527/B, Dr Rajkumar Rd, A Block, Milk Colony, 2nd Stage, Rajajinagar, Bengaluru, Karnataka 560010"],
       action: "Get directions",
       link: "#",
     },
     {
       icon: Clock,
       title: "Working Hours",
-      details: ["Mon - Sat: 9:00 AM - 8:00 PM", "Sun: 10:00 AM - 6:00 PM"],
+      details: ["Mon - Sat: 9:00 AM - 7:00 PM", "Sun: 10:00 AM - 6:00 PM"],
       action: null,
       link: null,
     },
@@ -220,7 +220,7 @@ export function Contact({ onNavigate }: ContactProps) {
                   <h3 className="text-white mb-6">Prefer Instant Communication?</h3>
                   <div className="space-y-4">
                     <Button
-                      onClick={() => window.open("https://wa.me/919876543210", "_blank")}
+                      onClick={() => window.open("https://wa.me/91767635255", "_blank")}
                       className="w-full bg-[#25D366] hover:bg-[#25D366]/90 text-white"
                       style={{borderRadius:'5px'}}
                     >
@@ -228,7 +228,7 @@ export function Contact({ onNavigate }: ContactProps) {
                       Chat on WhatsApp
                     </Button>
                     <Button
-                      onClick={() => window.location.href = "tel:+919876543210"}
+                      onClick={() => window.location.href = "tel:+917676355255"}
                       variant="outline"
                       className="w-full border-white text-[#004C91]"
                       style={{borderRadius:'5px'}}
@@ -248,13 +248,13 @@ export function Contact({ onNavigate }: ContactProps) {
                 <CardContent className="p-0">
                   <div className="h-[300px] bg-gray-200 rounded-lg overflow-hidden">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241316.64280874083!2d72.74109995!3d19.08219865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1234567890"
+                      src="https://maps.app.goo.gl/w29KHCjDp4ubi4Sq7"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
                       allowFullScreen
                       loading="lazy"
-                      title="trripah Office Location"
+                      title="Trripah Office Location"
                     />
                   </div>
                 </CardContent>

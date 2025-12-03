@@ -1,5 +1,5 @@
 import { Facebook, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react";
-import logo from "../assets/Trippah-lgo-2.svg";
+import logo from "../assets/trripah-logo.png";
 import styles from "./Footer.module.css";
 
 interface FooterProps {
@@ -21,7 +21,7 @@ export function Footer({ onNavigate }: FooterProps) {
             </p>
             <div className={styles.socialLinks}>
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/trripah.travel"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialLink}
@@ -130,8 +130,8 @@ export function Footer({ onNavigate }: FooterProps) {
               <li className={styles.contactItem}>
                 <Phone className={styles.contactIcon} />
                 <div>
-                  <a href="tel:+919876543210" className={styles.contactLink}>
-                    +91 98765 43210
+                  <a href="tel:+917676355255" className={styles.contactLink}>
+                    +91 7676 355 255
                   </a>
                 </div>
               </li>
@@ -139,14 +139,14 @@ export function Footer({ onNavigate }: FooterProps) {
                 <Mail className={styles.contactIcon} />
                 <div>
                   <a href="mailto:hello@trripah.com" className={styles.contactLink}>
-                    hello@trripah.com
+                    trripah@gmail.com
                   </a>
                 </div>
               </li>
               <li className={styles.contactItem}>
                 <MapPin className={styles.contactIcon} />
                 <div className={styles.contactText}>
-                  Mumbai, Maharashtra, India
+                  Tejas Arcade, 527/B, Dr Rajkumar Rd, A Block, Milk Colony, 2nd Stage, Rajajinagar, Bengaluru, Karnataka 560010
                 </div>
               </li>
             </ul>

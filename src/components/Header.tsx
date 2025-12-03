@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "./ui/sheet";
-import logo from "../assets/Trippah-lgo-2.svg";
+import logo from "../assets/trripah-logo.png";
 
 interface HeaderProps {
   currentPage: string;
