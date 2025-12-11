@@ -1,13 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import { Shield, Heart, Award, Users, MapPin, Globe } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
-interface AboutProps {
-  onNavigate: (page: string) => void;
-}
-
-export function About({ onNavigate }: AboutProps) {
+export function About() {
+  const navigate = useNavigate();
   const aboutStyles = `
     @media (min-width: 768px) {
       .about-values {
@@ -279,14 +277,14 @@ export function About({ onNavigate }: AboutProps) {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              onClick={() => onNavigate("packages")}
+              onClick={() => navigate("/packages")}
               size="lg"
               className="bg-white text-[#FF7B00] hover:bg-gray-100"
             >
               Explore Packages
             </Button>
             <Button
-              onClick={() => onNavigate("contact")}
+              onClick={() => navigate("/contact")}
               size="lg"
               variant="outline"
               className="border-white text-[#FF7B00]"

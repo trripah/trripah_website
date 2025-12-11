@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import { Badge } from "../components/ui/badge";
@@ -7,11 +8,8 @@ import { Calendar, Clock, ArrowRight, Search } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { useState } from "react";
 
-interface BlogProps {
-  onNavigate: (page: string) => void;
-}
-
-export function Blog({ onNavigate }: BlogProps) {
+export function Blog() {
+  const navigate = useNavigate();
   const [filterCategory, setFilterCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -278,13 +276,13 @@ export function Blog({ onNavigate }: BlogProps) {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              onClick={() => onNavigate("packages")}
+              onClick={() => navigate("/packages")}
               className="bg-[#FF7B00] hover:bg-[#FF7B00]/90 text-white"
             >
               Browse Packages
             </Button>
             <Button
-              onClick={() => onNavigate("custom-trip")}
+              onClick={() => navigate("/custom-trip")}
               variant="outline"
               className="border-[#004C91] text-[#004C91] hover:bg-[#004C91] hover:text-white"
             >

@@ -1,15 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { DestinationCard } from "../components/DestinationCard";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
 import { Button } from "../components/ui/button";
 import HomeImage from '../assets/bg.png';
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
-interface DestinationsProps {
-  onNavigate: (page: string, data?: any) => void;
-}
-
-export function Destinations({ onNavigate }: DestinationsProps) {
+export function Destinations() {
+  const navigate = useNavigate();
   const destinationStyles = `
     @media (min-width: 768px) {
       .destinations-filters {
@@ -149,7 +147,7 @@ export function Destinations({ onNavigate }: DestinationsProps) {
               <DestinationCard
                 key={destination.id}
                 {...destination}
-                onClick={() => onNavigate("packages")}
+                onClick={() => navigate("/packages")}
               />
             ))}
           </div>
@@ -164,7 +162,7 @@ export function Destinations({ onNavigate }: DestinationsProps) {
             Create a custom trip tailored to your preferences with our trip builder
           </p>
           <Button
-            onClick={() => onNavigate("custom-trip")}
+            onClick={() => navigate("/custom-trip")}
             className="hover:opacity-90 text-white"
             style={{background: 'linear-gradient(to right, #2B70E4, #094CBE)'}}
           >

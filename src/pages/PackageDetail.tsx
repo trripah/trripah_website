@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
@@ -7,12 +8,9 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "..
 import { Clock, Users, MapPin, Check, X, Calendar, Phone } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
-interface PackageDetailProps {
-  packageId?: string;
-  onNavigate: (page: string) => void;
-}
-
-export function PackageDetail({ packageId, onNavigate }: PackageDetailProps) {
+export function PackageDetail() {
+  const { id } = useParams();
+  const navigate = useNavigate();
   const [selectedImage, setSelectedImage] = useState(0);
 
   // Mock package data
@@ -299,14 +297,14 @@ export function PackageDetail({ packageId, onNavigate }: PackageDetailProps) {
                   <div className="space-y-3">
                     <Button
                       className="w-full bg-[#FF7B00] hover:bg-[#FF7B00]/90 text-white"
-                      onClick={() => onNavigate("contact")}
+                      onClick={() => navigate("/contact")}
                     >
                       Book This Package
                     </Button>
                     <Button
                       variant="outline"
                       className="w-full"
-                      onClick={() => onNavigate("custom-trip")}
+                      onClick={() => navigate("/custom-trip")}
                     >
                       Customize This Trip
                     </Button>

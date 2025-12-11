@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { Input } from "../components/ui/input";
@@ -10,11 +11,8 @@ import { Progress } from "../components/ui/progress";
 import { ArrowLeft, ArrowRight, CheckCircle } from "lucide-react";
 import { toast } from "sonner@2.0.3";
 
-interface CustomTripProps {
-  onNavigate: (page: string) => void;
-}
-
-export function CustomTrip({ onNavigate }: CustomTripProps) {
+export function CustomTrip() {
+  const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
     destination: "",
@@ -58,7 +56,7 @@ export function CustomTrip({ onNavigate }: CustomTripProps) {
     // In a real app, this would send data to backend
     toast.success("Trip request submitted! Our team will contact you within 24 hours.");
     setTimeout(() => {
-      onNavigate("home");
+      navigate("/");
     }, 2000);
   };
 
@@ -367,7 +365,7 @@ export function CustomTrip({ onNavigate }: CustomTripProps) {
           <p className="text-gray-600 mb-2">Need help planning? We're here for you!</p>
           <Button
             variant="link"
-            onClick={() => onNavigate("contact")}
+            onClick={() => navigate("/contact")}
             className="text-[#FF7B00]"
           >
             Contact Our Travel Experts

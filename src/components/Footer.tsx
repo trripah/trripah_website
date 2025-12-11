@@ -1,12 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import { Facebook, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react";
 import logo from "../assets/trripah-logo.png";
 import styles from "./Footer.module.css";
 
-interface FooterProps {
-  onNavigate: (page: string) => void;
-}
-
-export function Footer({ onNavigate }: FooterProps) {
+export function Footer() {
+  const navigate = useNavigate();
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -53,35 +51,35 @@ export function Footer({ onNavigate }: FooterProps) {
             <ul className={styles.linksList}>
               <li className={styles.linkItem}>
                 <button
-                  onClick={() => onNavigate("destinations")}
+                  onClick={() => navigate("/destinations")}
                 >
                   Destinations
                 </button>
               </li>
               <li className={styles.linkItem}>
                 <button
-                  onClick={() => onNavigate("packages")}
+                  onClick={() => navigate("/packages")}
                 >
                   Packages
                 </button>
               </li>
               <li className={styles.linkItem}>
                 <button
-                  onClick={() => onNavigate("custom-trip")}
+                  onClick={() => navigate("/custom-trip")}
                 >
                   Custom Trip Builder
                 </button>
               </li>
               <li className={styles.linkItem}>
                 <button
-                  onClick={() => onNavigate("blog")}
+                  onClick={() => navigate("/blog")}
                 >
                   Travel Blog
                 </button>
               </li>
               <li className={styles.linkItem}>
                 <button
-                  onClick={() => onNavigate("reviews")}
+                  onClick={() => navigate("/reviews")}
                 >
                   Reviews
                 </button>
@@ -95,7 +93,7 @@ export function Footer({ onNavigate }: FooterProps) {
             <ul className={styles.linksList}>
               <li className={styles.linkItem}>
                 <button
-                  onClick={() => onNavigate("about")}
+                  onClick={() => navigate("/about")}
                 >
                   About Us
                 </button>

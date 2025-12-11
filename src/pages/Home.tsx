@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
@@ -16,11 +17,8 @@ import Rajastan from '../assets/rajastan.jpg'
 import India from '../assets/India Flag.svg'
 import World from '../assets/world-map.svg'
 
-interface HomeProps {
-  onNavigate: (page: string, data?: any) => void;
-}
-
-export function Home({ onNavigate }: HomeProps) {
+export function Home() {
+  const navigate = useNavigate();
   const [searchDestination, setSearchDestination] = useState("");
   const [searchBudget, setSearchBudget] = useState("");
   const [activeTab, setActiveTab] = useState("international");
@@ -323,7 +321,7 @@ export function Home({ onNavigate }: HomeProps) {
                               <Input type="text" placeholder="Do you need customization ?" className="h-10 border-none bg-gray-100 placeholder:text-gray-500 focus-visible:ring-0  px-4" />
                               <Button
                                   className="w-full h-12 mt-2 text-white font-semibold text-base "
-                                  onClick={() => onNavigate("packages")}
+                                  onClick={() => navigate("/packages")}
                                   style={{ backgroundColor: '#2b70e4', cursor: 'pointer' }}
                               >
                                   Get in touch
@@ -383,7 +381,7 @@ export function Home({ onNavigate }: HomeProps) {
                   animation: 'flipCard 0.6s ease-in-out forwards',
                   animationDelay: `${index * 0.1}s`,
                 }}
-                onClick={() => onNavigate("destinations")}
+                onClick={() => navigate("/destinations")}
                 className="group"
               >
                 <div style={styles.cardImageWrapper}>
@@ -443,7 +441,7 @@ export function Home({ onNavigate }: HomeProps) {
               <div 
                 key={pkg.id} 
                 style={styles.destinationCardContainer}
-                onClick={() => onNavigate("package-detail", { id: pkg.id })}
+                onClick={() => navigate(`/package/${pkg.id}`)}
                 className="group"
               >
                 <div style={styles.cardImageWrapper}>
@@ -512,7 +510,7 @@ export function Home({ onNavigate }: HomeProps) {
           <div style={styles.testimonialsButtonContainer}>
             <Button
               variant="outline"
-              onClick={() => onNavigate("reviews")}
+              onClick={() => navigate("/reviews")}
               className="border-[#5B4FE6] text-[#5B4FE6] hover:bg-[#5B4FE6] hover:text-white"
               style={{ cursor: 'pointer' }}
             >
@@ -548,7 +546,7 @@ export function Home({ onNavigate }: HomeProps) {
                   <Button
                     variant="link"
                     className="text-[#5B4FE6] hover:text-[#5B4FE6]/80 p-0"
-                    onClick={() => onNavigate("blog")}
+                    onClick={() => navigate("/blog")}
                     style={{ cursor: 'pointer' }}
                   >
                     Read More →
@@ -559,7 +557,7 @@ export function Home({ onNavigate }: HomeProps) {
           </div>
           <div style={styles.blogButtonContainer}>
             <Button
-              onClick={() => onNavigate("blog")}
+              onClick={() => navigate("/blog")}
               variant="outline"
               className="border-[#5B4FE6] text-[#5B4FE6] hover:bg-[#5B4FE6] hover:text-white"
               style={{ cursor: 'pointer' }}
@@ -578,7 +576,7 @@ export function Home({ onNavigate }: HomeProps) {
             Let our travel experts create a personalized itinerary just for you
           </p>
           <Button
-            onClick={() => onNavigate("custom-trip")}
+            onClick={() => navigate("/custom-trip")}
             size="lg"
             style={styles.ctaButton}
           >

@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { WhatsAppButton } from "./components/WhatsAppButton";
@@ -12,62 +13,45 @@ import { Contact } from "./pages/Contact";
 import { Blog } from "./pages/Blog";
 import { Reviews } from "./pages/Reviews";
 import { Toaster } from "./components/ui/sonner";
+import { LoginScreen } from "./pages/LoginScreen";
 
-export default function App() {
-  const [currentPage, setCurrentPage] = useState("home");
-  const [pageData, setPageData] = useState<any>(null);
+function AppLayout() {
+  const location = useLocation();
+  const isLoginPage = location.pathname === "/login";
 
-  const handleNavigate = (page: string, data?: any) => {
-    setCurrentPage(page);
-    setPageData(data || null);
-    // Scroll to top when navigating
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  // Handle browser back/forward
   useEffect(() => {
-    const handlePopState = () => {
-      // In a real app, you'd use proper routing library
-      // This is a simple implementation for demonstration
-    };
-    window.addEventListener("popstate", handlePopState);
-    return () => window.removeEventListener("popstate", handlePopState);
-  }, []);
-
-  const renderPage = () => {
-    switch (currentPage) {
-      case "home":
-        return <Home onNavigate={handleNavigate} />;
-      case "destinations":
-        return <Destinations onNavigate={handleNavigate} />;
-      case "packages":
-        return <Packages onNavigate={handleNavigate} />;
-      case "package-detail":
-        return <PackageDetail packageId={pageData?.id} onNavigate={handleNavigate} />;
-      case "custom-trip":
-        return <CustomTrip onNavigate={handleNavigate} />;
-      case "about":
-        return <About onNavigate={handleNavigate} />;
-      case "contact":
-        return <Contact onNavigate={handleNavigate} />;
-      case "blog":
-        return <Blog onNavigate={handleNavigate} />;
-      case "reviews":
-        return <Reviews onNavigate={handleNavigate} />;
-      default:
-        return <Home onNavigate={handleNavigate} />;
-    }
-  };
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location]);
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header currentPage={currentPage} onNavigate={handleNavigate} />
+      {!isLoginPage && <Header />}
       <main className="flex-1">
-        {renderPage()}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/destinations" element={<Destinations />} />
+          <Route path="/packages" element={<Packages />} />
+          <Route path="/package/:id" element={<PackageDetail />} />
+          <Route path="/custom-trip" element={<CustomTrip />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/reviews" element={<Reviews />} />
+          <Route path="/login" element={<LoginScreen />} />
+        </Routes>
       </main>
-      <Footer onNavigate={handleNavigate} />
-      <WhatsAppButton />
+      {!isLoginPage && <Footer />}
+      {!isLoginPage && <WhatsAppButton />}
       <Toaster position="top-right" />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Router>
+      <AppLayout />
+    </Router>
   );
 }

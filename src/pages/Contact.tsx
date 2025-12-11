@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { Input } from "../components/ui/input";
@@ -11,11 +12,8 @@ import { toast } from "sonner@2.0.3";
 import HomeImage from '../assets/bg.png';
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
-interface ContactProps {
-  onNavigate: (page: string) => void;
-}
-
-export function Contact({ onNavigate }: ContactProps) {
+export function Contact() {
+  const navigate = useNavigate();
   const contactStyles = `
     @media (min-width: 768px) {
       .contact-info-section {
@@ -269,14 +267,14 @@ export function Contact({ onNavigate }: ContactProps) {
                   </p>
                   <div className="flex gap-3">
                     <Button
-                      onClick={() => onNavigate("packages")}
+                      onClick={() => navigate("/packages")}
                       variant="outline"
                       size="sm"
                     >
                       View Packages
                     </Button>
                     <Button
-                      onClick={() => onNavigate("blog")}
+                      onClick={() => navigate("/blog")}
                       variant="outline"
                       size="sm"
                     >

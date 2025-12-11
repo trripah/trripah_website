@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "./ui/sheet";
 import logo from "../assets/trripah-logo.png";
 
-interface HeaderProps {
-  currentPage: string;
-  onNavigate: (page: string) => void;
-}
-
-export function Header({ currentPage, onNavigate }: HeaderProps) {
+export function Header() {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -23,14 +21,18 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
   }, []);
 
   const navItems = [
-    { name: "Destinations", path: "destinations" },
-    { name: "Packages", path: "packages" },
-    { name: "About Us", path: "about" },
-    { name: "Contact", path: "contact" },
+    { name: "Destinations", path: "/destinations" },
+    { name: "Packages", path: "/packages" },
+    { name: "About Us", path: "/about" },
+    { name: "Contact", path: "/contact" },
   ];
 
+  const isActive = (path: string) => {
+    return location.pathname === path || (path === "/destinations" && location.pathname === "/destinations");
+  };
+
   const handleNavClick = (path: string) => {
-    onNavigate(path);
+    navigate(path);
     setIsOpen(false);
   };
 
@@ -39,7 +41,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
       <div className="container mx-auto px-2 py-4 flex items-center justify-between" data-header-content>
         {/* Logo */}
         <button
-          onClick={() => onNavigate("home")}
+          onClick={() => navigate("/")}
           className="hover:opacity-80 transition-opacity"
           style={{ cursor: 'pointer' }}
         >
@@ -56,15 +58,14 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
           {navItems.map((item) => (
             <button
               key={item.path}
-              onClick={() => onNavigate(item.path)}
+              onClick={() => navigate(item.path)}
               className="transition-colors text-white"
               style={{
                 fontSize: '1rem',
                 fontWeight: '500',
                 cursor: 'pointer',
-                borderBottom: currentPage === item.path ? '1.5px solid white' : 'none',
-                // borderRadius: currentPage === item.path ? '5px' : '0',
-                padding: currentPage === item.path ? '4px 8px' : '0'
+                borderBottom: isActive(item.path) ? '1.5px solid white' : 'none',
+                padding: isActive(item.path) ? '4px 8px' : '0'
               }}
             >
               {item.name}
@@ -72,7 +73,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
           ))}
         </nav>
           <Button
-            onClick={() => onNavigate("custom-trip")}
+            onClick={() => navigate("/custom-trip")}
             className="plan-trip-btn-desktop"
             data-plan-trip-btn
             >
@@ -98,7 +99,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
                   key={item.path}
                   onClick={() => handleNavClick(item.path)}
                   className={`text-left transition-colors hover:text-[#5B4FE6] ${
-                    currentPage === item.path ? "text-[#5B4FE6]" : "text-gray-700"
+                    isActive(item.path) ? "text-[#5B4FE6]" : "text-gray-700"
                   }`}
                   style={{ cursor: 'pointer' }}
                 >
@@ -106,7 +107,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
                 </button>
               ))}
               <Button
-                onClick={() => handleNavClick("custom-trip")}
+                onClick={() => handleNavClick("/custom-trip")}
                 className="plan-trip-btn-mobile"
                 data-plan-trip-btn
               >

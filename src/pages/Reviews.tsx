@@ -5,11 +5,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { Progress } from "../components/ui/progress";
 import { Star } from "lucide-react";
 
-interface ReviewsProps {
-  onNavigate: (page: string) => void;
-}
-
-export function Reviews({ onNavigate }: ReviewsProps) {
+export function Reviews() {
   const [filterRating, setFilterRating] = useState("all");
   const [filterDestination, setFilterDestination] = useState("all");
 

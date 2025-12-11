@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { PackageCard } from "../components/PackageCard";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
 import { Slider } from "../components/ui/slider";
@@ -7,11 +8,8 @@ import { Card, CardContent } from "../components/ui/card";
 import HomeImage from '../assets/bg.png';
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
-interface PackagesProps {
-  onNavigate: (page: string, data?: any) => void;
-}
-
-export function Packages({ onNavigate }: PackagesProps) {
+export function Packages() {
+  const navigate = useNavigate();
   const packageStyles = `
     @media (min-width: 768px) {
       .packages-filters {
@@ -221,7 +219,7 @@ export function Packages({ onNavigate }: PackagesProps) {
               <PackageCard
                 key={pkg.id}
                 {...pkg}
-                onViewDetails={(id) => onNavigate("package-detail", { id })}
+                onViewDetails={(id) => navigate(`/package/${id}`)}
               />
             ))}
           </div>
@@ -238,7 +236,7 @@ export function Packages({ onNavigate }: PackagesProps) {
                 Book any package before November 15th and get <span style={{ fontWeight: 700 }}>20% OFF</span> plus a complimentary airport transfer!
               </p>
               <Button
-                onClick={() => onNavigate("custom-trip")}
+                onClick={() => navigate("/custom-trip")}
                 className="bg-white text-[#5B4FE6] hover:bg-gray-100"
               >
                 Book Now & Save
@@ -256,7 +254,7 @@ export function Packages({ onNavigate }: PackagesProps) {
             Let us create a personalized itinerary tailored to your interests, budget, and travel style
           </p>
           <Button
-            onClick={() => onNavigate("custom-trip")}
+            onClick={() => navigate("/custom-trip")}
             className="hover:opacity-90 text-white"
             style={{background: 'linear-gradient(to right, #2B70E4, #094CBE)'}}
           >
