@@ -13,11 +13,14 @@ import { Contact } from "./pages/Contact";
 import { Blog } from "./pages/Blog";
 import { Reviews } from "./pages/Reviews";
 import { Toaster } from "./components/ui/sonner";
-import { LoginScreen } from "./pages/LoginScreen";
+import { LoginScreen } from "./admin/LoginScreen";
+import DashboardScreen from "./admin/DashbodeScreen";
+import { AuthProvider } from "./contexts/AuthContext";
+import { ProtectedRoute } from "./components/ProtectedRoute";
 
 function AppLayout() {
   const location = useLocation();
-  const isLoginPage = location.pathname === "/login";
+  const isAdminPage = location.pathname === "/admin/login" || location.pathname === "/admin/dashboard";
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -25,7 +28,7 @@ function AppLayout() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {!isLoginPage && <Header />}
+      {!isAdminPage && <Header />}
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -38,11 +41,16 @@ function AppLayout() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/reviews" element={<Reviews />} />
-          <Route path="/login" element={<LoginScreen />} />
+          <Route path="/admin/login" element={<LoginScreen />} />
+          <Route path="/admin/dashboard" element={
+            <ProtectedRoute>
+              <DashboardScreen />
+            </ProtectedRoute>
+          } />
         </Routes>
       </main>
-      {!isLoginPage && <Footer />}
-      {!isLoginPage && <WhatsAppButton />}
+      {!isAdminPage && <Footer />}
+      {!isAdminPage && <WhatsAppButton />}
       <Toaster position="top-right" />
     </div>
   );
@@ -50,8 +58,10 @@ function AppLayout() {
 
 export default function App() {
   return (
-    <Router>
-      <AppLayout />
-    </Router>
+    <AuthProvider>
+      <Router>
+        <AppLayout />
+      </Router>
+    </AuthProvider>
   );
 }
