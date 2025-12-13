@@ -1,19 +1,11 @@
 import React from 'react';
-import { X, Mail, Phone, MoreHorizontal, MessageSquare, ArrowRight, Plus, Check, Loader2, History } from 'lucide-react';
-
-interface Lead {
-  id: number;
-  name: string;
-  title: string;
-  company: string;
-  email: string;
-  avatar?: string;
-}
+import { X, Mail, Phone, MoreHorizontal, MessageSquare, ArrowRight, Plus, Check, Loader2, History, MapPin, Users, Calendar, DollarSign, Hotel, Sparkles } from 'lucide-react';
+import { DataRequest } from '../utils/dataType';
 
 interface LeadDetailSidebarProps {
   isOpen: boolean;
   onClose: () => void;
-  lead: Lead | null;
+  lead: DataRequest | null;
 }
 
 export default function LeadDetailSidebar({ isOpen, onClose, lead }: LeadDetailSidebarProps) {
@@ -37,163 +29,100 @@ export default function LeadDetailSidebar({ isOpen, onClose, lead }: LeadDetailS
           {/* Profile Section */}
           <div style={styles.profileSection}>
             <div style={styles.profileHeader}>
-              {/* Using a placeholder if avatar is missing to match the clean look */}
-              <img 
-                src={lead.avatar || `https://ui-avatars.com/api/?name=${lead.name}&background=0D8ABC&color=fff`} 
-                alt={lead.name} 
-                style={styles.avatar} 
-              />
+              <div 
+                style={{...styles.avatarPlaceholder, backgroundColor: '#0D8ABC', width: '56px', height: '56px'}}
+              >
+                {lead.name.charAt(0).toUpperCase()}
+              </div>
               <div style={styles.profileInfo}>
                 <h3 style={styles.profileName}>{lead.name}</h3>
                 <div style={styles.profileEmail}>{lead.email}</div>
               </div>
               <div style={styles.actionButtons}>
-                <button style={styles.iconBtn}><MessageSquare size={16} /></button>
-                <button style={styles.iconBtn}><Mail size={16} /></button>
-                <button style={styles.iconBtn}><Phone size={16} /></button>
-                <button style={styles.iconBtn}><MoreHorizontal size={16} /></button>
+                <button style={styles.iconBtn}><MessageSquare size={18} /></button>
+                <button style={styles.iconBtn}><Mail size={18} /></button>
+                <button style={styles.iconBtn}><Phone size={18} /></button>
+                <button style={styles.iconBtn}><MoreHorizontal size={18} /></button>
               </div>
             </div>
 
-            {/* Info Grid */}
+            {/* Trip Info Grid */}
             <div style={styles.infoGrid}>
               <div style={styles.infoItem}>
-                <label style={styles.infoLabel}>Lead owner</label>
-                <div style={styles.infoValue}>Floyd Miles</div>
+                <label style={styles.infoLabel}>
+                  <MapPin size={14} style={{display: 'inline', marginRight: '4px'}} />
+                  Destination
+                </label>
+                <div style={styles.infoValue}>{lead.destination}</div>
               </div>
               <div style={styles.infoItem}>
-                <label style={styles.infoLabel}>Location</label>
-                <div style={styles.infoValue}>Toledo</div>
+                <label style={styles.infoLabel}>
+                  <Calendar size={14} style={{display: 'inline', marginRight: '4px'}} />
+                  Duration
+                </label>
+                <div style={styles.infoValue}>{lead.tripDuration}</div>
               </div>
               <div style={styles.infoItem}>
-                <label style={styles.infoLabel}>Referral Partner</label>
-                <div style={styles.infoValue}>Jennifer Winget</div>
+                <label style={styles.infoLabel}>
+                  <Users size={14} style={{display: 'inline', marginRight: '4px'}} />
+                  Travellers
+                </label>
+                <div style={styles.infoValue}>{lead.numberOfTravellers}</div>
               </div>
               <div style={styles.infoItem}>
-                <label style={styles.infoLabel}>Annual Income</label>
-                <div style={styles.infoValue}>NZ$10,000</div>
+                <label style={styles.infoLabel}>
+                  <DollarSign size={14} style={{display: 'inline', marginRight: '4px'}} />
+                  Budget
+                </label>
+                <div style={styles.infoValue}>{lead.budget}</div>
+              </div>
+              <div style={styles.infoItem}>
+                <label style={styles.infoLabel}>
+                  <Calendar size={14} style={{display: 'inline', marginRight: '4px'}} />
+                  Trip Dates
+                </label>
+                <div style={styles.infoValue}>{lead.dates}</div>
+              </div>
+              <div style={styles.infoItem}>
+                <label style={styles.infoLabel}>
+                  <Hotel size={14} style={{display: 'inline', marginRight: '4px'}} />
+                  Hotel Pref.
+                </label>
+                <div style={styles.infoValue}>{lead.hotelPreference}</div>
               </div>
             </div>
 
-            {/* Progress Bar */}
-            <div style={styles.progressSection}>
-              <div style={styles.progressHeader}>
-                <div style={styles.progressTitle}>
-                  <Loader2 size={16} style={styles.spinnerIcon} />
-                  <span>Progress</span>
-                </div>
-                <span style={styles.progressPercent}>76% completed</span>
+            {/* Interests Section */}
+            <div style={styles.interestsSection}>
+              <div style={styles.sectionTitle}>
+                <Sparkles size={16} style={{marginRight: '6px'}} />
+                Interests
               </div>
-              <div style={styles.progressBarContainer}>
-                <div style={styles.progressBarFill}></div>
-                <div style={styles.progressBarKnob}></div>
+              <div style={styles.interestsList}>
+                {lead.interests.split(',').map((interest, index) => (
+                  <div key={index} style={styles.interestItem}>
+                    {interest.trim()}
+                  </div>
+                ))}
               </div>
+            </div>
+
+            {/* Reference Number */}
+            <div style={styles.refSection}>
+              <label style={styles.infoLabel}>Reference Number</label>
+              <div style={styles.refValue}>{lead.refNumber}</div>
             </div>
           </div>
 
           <div style={styles.divider}></div>
 
           {/* Latest Activities */}
-          <div style={styles.section}>
-            <div style={styles.sectionHeader}>
-              <div style={styles.sectionTitleRow}>
-                <h4 style={styles.sectionTitle}>Latest Activities</h4>
-                <span style={styles.badgeYellow}>3</span>
-              </div>
-              <button style={styles.linkButton}>
-                <History size={14} /> View All Activity
-              </button>
-            </div>
-
-            <div style={styles.timeline}>
-              <div style={styles.timelineLine}></div>
-              
-              {/* Activity 1 */}
-              <div style={styles.timelineItem}>
-                <div style={styles.timelineIconContainer}>
-                   <div style={{...styles.timelineIcon, backgroundColor: '#F3F4F6'}}>
-                      <MessageSquare size={14} color="#111" />
-                   </div>
-                </div>
-                <div style={styles.timelineContent}>
-                  <div style={styles.activityText}>
-                    <span style={styles.boldText}>Eleanor Pena</span> tagged you in a comment
-                  </div>
-                  <div style={styles.activityTime}>Today 12:00 PM</div>
-                  <div style={styles.statusBadge}>
-                    <div style={styles.checkCircle}><Check size={10} color="white" /></div> 
-                    Accepted
-                  </div>
-                </div>
-              </div>
-
-              {/* Activity 2 */}
-              <div style={styles.timelineItem}>
-                <div style={styles.timelineIconContainer}>
-                   <div style={{...styles.timelineIcon, backgroundColor: '#fff', border: '1px solid #eee'}}>
-                      <Loader2 size={14} color="#111" className="spin" />
-                   </div>
-                </div>
-                <div style={styles.timelineContent}>
-                  <div style={styles.activityText}>
-                    <span style={styles.boldText}>Eleanor Pena</span> shared deal progress
-                  </div>
-                  <div style={styles.activityTime}>Today 12:00 PM</div>
-                  <div style={styles.tagRow}>
-                    <span style={styles.tagPurple}>New</span>
-                    <ArrowRight size={12} color="#666" />
-                    <span style={styles.tagGreen}>In progress</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Activity 3 */}
-              <div style={styles.timelineItem}>
-                <div style={styles.timelineIconContainer}>
-                   <div style={{...styles.timelineIcon, backgroundColor: '#F3F4F6'}}>
-                      <MessageSquare size={14} color="#111" />
-                   </div>
-                </div>
-                <div style={styles.timelineContent}>
-                  <div style={styles.activityText}>
-                    <span style={styles.boldText}>Eleanor Pena</span> commented on Documents update
-                  </div>
-                  <div style={styles.activityTime}>Today 12:00 PM</div>
-                </div>
-              </div>
-
-            </div>
-          </div>
+          
 
           <div style={styles.divider}></div>
 
           {/* Notes Section */}
-          <div style={styles.section}>
-            <div style={styles.sectionHeader}>
-              <div style={styles.sectionTitleRow}>
-                <h4 style={styles.sectionTitle}>Notes</h4>
-                <span style={styles.badgeYellow}>4</span>
-              </div>
-              <button style={styles.addNoteButton}>
-                <Plus size={14} /> Add Note
-              </button>
-            </div>
-
-            <div style={styles.noteCard}>
-              <div style={styles.noteHeader}>
-                 <div style={styles.noteAuthorRow}>
-                    <div style={styles.noteIcon}>
-                        <div style={styles.noteLine}></div>
-                    </div>
-                    <span style={styles.boldText}>Note by Eleanor Pena</span>
-                 </div>
-                 <span style={styles.activityTime}>Today 12:00 PM</span>
-              </div>
-              <p style={styles.noteBody}>
-                All loan documents have been sent, and most have been approved and submitted for review.
-              </p>
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -243,7 +172,7 @@ const styles: { [key: string]: React.CSSProperties } = {
   },
   headerTitle: {
     margin: 0,
-    fontSize: '16px',
+    fontSize: '18px',
     fontWeight: 600,
   },
   viewDetailsBtn: {
@@ -281,21 +210,21 @@ const styles: { [key: string]: React.CSSProperties } = {
   },
   profileName: {
     margin: '0 0 3px 0',
-    fontSize: '14px',
+    fontSize: '16px',
     fontWeight: 600,
     color: '#111',
   },
   profileEmail: {
     color: '#666',
-    fontSize: '12px',
+    fontSize: '13px',
   },
   actionButtons: {
     display: 'flex',
     gap: '6px',
   },
   iconBtn: {
-    width: '28px',
-    height: '28px',
+    width: '32px',
+    height: '32px',
     borderRadius: '50%',
     border: '1px solid #eee',
     backgroundColor: '#fff',
@@ -320,11 +249,11 @@ const styles: { [key: string]: React.CSSProperties } = {
     gap: '3px',
   },
   infoLabel: {
-    fontSize: '10px',
+    fontSize: '11px',
     color: '#666',
   },
   infoValue: {
-    fontSize: '12px',
+    fontSize: '14px',
     fontWeight: 500,
     color: '#111',
   },
@@ -400,7 +329,7 @@ const styles: { [key: string]: React.CSSProperties } = {
   },
   sectionTitle: {
     margin: 0,
-    fontSize: '13px',
+    fontSize: '14px',
     fontWeight: 600,
   },
   badgeYellow: {
@@ -470,7 +399,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     paddingTop: '3px',
   },
   activityText: {
-    fontSize: '12px',
+    fontSize: '13px',
     color: '#111',
     marginBottom: '3px',
     lineHeight: '1.4',
@@ -479,7 +408,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     fontWeight: 600,
   },
   activityTime: {
-    fontSize: '10px',
+    fontSize: '11px',
     color: '#9CA3AF',
     marginBottom: '6px',
   },
@@ -487,7 +416,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     display: 'inline-flex',
     alignItems: 'center',
     gap: '5px',
-    fontSize: '11px',
+    fontSize: '12px',
     fontWeight: 500,
     color: '#111',
     marginTop: '3px',
@@ -510,17 +439,17 @@ const styles: { [key: string]: React.CSSProperties } = {
   tagPurple: {
     backgroundColor: '#E0E7FF',
     color: '#4338CA',
-    fontSize: '10px',
+    fontSize: '11px',
     fontWeight: 500,
-    padding: '1px 6px',
+    padding: '2px 8px',
     borderRadius: '4px',
   },
   tagGreen: {
     backgroundColor: '#DCFCE7',
     color: '#166534',
-    fontSize: '10px',
+    fontSize: '11px',
     fontWeight: 500,
-    padding: '1px 6px',
+    padding: '2px 8px',
     borderRadius: '4px',
   },
   noteCard: {
@@ -538,7 +467,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     display: 'flex',
     alignItems: 'center',
     gap: '6px',
-    fontSize: '12px',
+    fontSize: '13px',
   },
   noteIcon: {
     width: '18px',
@@ -554,9 +483,52 @@ const styles: { [key: string]: React.CSSProperties } = {
     boxShadow: '0 3px 0 #111, 0 -3px 0 #111',
   },
   noteBody: {
-    fontSize: '12px',
+    fontSize: '13px',
     color: '#4B5563',
     lineHeight: '1.5',
     margin: 0,
+  },
+  avatarPlaceholder: {
+    width: '48px',
+    height: '48px',
+    borderRadius: '50%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: '#fff',
+    fontWeight: 600,
+    fontSize: '18px',
+  },
+  interestsSection: {
+    border: '1px solid #eee',
+    padding: '12px',
+    borderRadius: '8px',
+    marginBottom: '12px',
+    marginTop: '12px',
+  },
+  interestsList: {
+    fontSize: '13px',
+    color: '#4B5563',
+    marginTop: '8px',
+    lineHeight: '1.5',
+  },
+  interestItem: {
+    fontSize: '13px',
+    color: '#4B5563',
+    padding: '8px 0',
+    borderBottom: '1px solid #f0f0f0',
+  },
+  refSection: {
+    padding: '12px',
+    backgroundColor: '#f9fafb',
+    borderRadius: '8px',
+    marginTop: '12px',
+  },
+  refValue: {
+    fontSize: '13px',
+    fontWeight: 500,
+    color: '#111',
+    marginTop: '4px',
+    fontFamily: 'monospace',
   }
 };

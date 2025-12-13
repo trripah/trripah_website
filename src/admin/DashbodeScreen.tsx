@@ -1,149 +1,45 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Search, Filter, ChevronDown, Calendar, Download, MoreHorizontal, Grid3x3, Bell, Gift, User } from 'lucide-react';
-import LeadDetailSidebar from './LeadDetailSidebar'; // Make sure the path matches where you saved the file
-
-// Defined interface to share between files (in a real app, put this in a types.ts file)
-interface Lead {
-  id: number;
-  name: string;
-  title: string;
-  company: string;
-  phone: string;
-  phoneVerified?: boolean;
-  email: string;
-  emailVerified?: boolean;
-  addedBy: string;
-  addedByEmail: string;
-  list: string;
-  avatar?: string;
-  initials?: string;
-  bgColor?: string;
-}
+import LeadDetailSidebar from './LeadDetailSidebar';
+import { getDataRequest } from '../utils/ApiHandling';
+import { DataRequest } from '../utils/dataType';
 
 export default function DashboardScreen() {
   const [currentPage, setCurrentPage] = useState(1);
-  const [selectedLead, setSelectedLead] = useState<Lead | null>(null); // State for the sidebar
-  const totalPages = 3;
+  const [selectedLead, setSelectedLead] = useState<DataRequest | null>(null);
+  const [leads, setLeads] = useState<DataRequest[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const itemsPerPage = 5;
+  const totalPages = Math.ceil(leads.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const displayedLeads = leads.slice(startIndex, endIndex);
 
-  const leads: Lead[] = [
-    {
-      id: 1,
-      name: 'Lindsay Norman',
-      title: 'Team Lead',
-      company: 'Walmart',
-      phone: '174-000-9546',
-      phoneVerified: true,
-      email: 'haley_abbott@hotmail.com',
-      emailVerified: true,
-      addedBy: 'Anmol Arora',
-      addedByEmail: 'anmol@illuminz.com',
-      list: 'Website Dev.',
-      avatar: 'https://i.pravatar.cc/150?img=1'
-    },
-    {
-      id: 2,
-      name: 'Athar Malakooti',
-      title: 'Director of Marketing',
-      company: 'Amazon',
-      phone: '152-986-3774',
-      phoneVerified: true,
-      email: 'schulist.jayden@herzog.io',
-      addedBy: 'Anmol Arora',
-      addedByEmail: 'anmol@illuminz.com',
-      list: 'Leads',
-      initials: 'AM',
-      bgColor: '#FFE5E5'
-    },
-    {
-      id: 3,
-      name: 'Bonelwa Ngqawana',
-      title: 'Manager',
-      company: 'Exxon Mobil',
-      phone: '094-451-4647',
-      email: 'sam_kuhic@gmail.com',
-      addedBy: 'Sanchit Thakur',
-      addedByEmail: 'sanchitthakur@illuminz.com',
-      list: 'App Development',
-      avatar: 'https://i.pravatar.cc/150?img=2'
-    },
-    {
-      id: 4,
-      name: 'Cvita Doleschall',
-      title: 'Assistant Manager',
-      company: 'Apple',
-      phone: '631-513-7853',
-      email: 'torp_neha@yahoo.com',
-      addedBy: 'Anmol Arora',
-      addedByEmail: 'anmol@illuminz.com',
-      list: 'Leads',
-      avatar: 'https://i.pravatar.cc/150?img=3'
-    },
-    {
-      id: 5,
-      name: 'Gladys Kanyinda',
-      title: 'Executive',
-      company: 'CVS Health',
-      phone: '267-214-3752',
-      phoneVerified: true,
-      email: 'dare_ernest@leffler.io',
-      emailVerified: true,
-      addedBy: 'Aman Mann',
-      addedByEmail: 'aman.m@illuminz.com',
-      list: 'Marketing',
-      avatar: 'https://i.pravatar.cc/150?img=4'
-    },
-    {
-      id: 6,
-      name: 'Kip Collison',
-      title: 'Director',
-      company: 'Berkshire Hath...',
-      phone: '044-000-4230',
-      email: 'keira_hahn@yahoo.com',
-      addedBy: 'Ankur',
-      addedByEmail: 'ankur@illuminz.com',
-      list: 'Real Estate',
-      initials: 'KC',
-      bgColor: '#E5F0FF'
-    },
-    {
-      id: 7,
-      name: 'Mattie Blooman',
-      title: 'Coordinator',
-      company: 'UnitedHealth G...',
-      phone: '381-178-2619',
-      email: 'mattieb@uhg.com',
-      addedBy: 'Anmol Arora',
-      addedByEmail: 'anmol@illuminz.com',
-      list: 'Design Leads',
-      initials: 'MB',
-      bgColor: '#FFF4E5'
-    },
-    {
-      id: 8,
-      name: 'Veerle de Bree',
-      title: 'Administrator',
-      company: 'McKesson',
-      phone: '527-755-4241',
-      email: 'matilda_daugherty@hotmail.com',
-      addedBy: 'Anmol Arora',
-      addedByEmail: 'anmol@illuminz.com',
-      list: 'Leads',
-      avatar: 'https://i.pravatar.cc/150?img=5'
-    },
-    {
-      id: 9,
-      name: 'Yi Hanying',
-      title: 'Controller',
-      company: 'Walmart',
-      phone: '678-168-6894',
-      email: 'claudine.ebert@leslie.ca',
-      addedBy: 'Anmol Arora',
-      addedByEmail: 'anmol@illuminz.com',
-      list: 'Leads',
-      initials: 'YH',
-      bgColor: '#E5FFF0'
-    }
-  ];
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const data = await getDataRequest();
+        setLeads(data);
+      } catch (err) {
+        setError('Failed to fetch data');
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <div style={styles.container}><div style={styles.mainContent}><p>Loading...</p></div></div>;
+  }
+
+  if (error) {
+    return <div style={styles.container}><div style={styles.mainContent}><p>{error}</p></div></div>;
+  }
 
   return (
     <div style={styles.container}>
@@ -286,17 +182,21 @@ export default function DashboardScreen() {
               </div>
               
               <div style={styles.tableHeaderRight}>
-                <span style={styles.resultsText}>Results 30</span>
+                <span style={styles.resultsText}>Results {leads.length}</span>
                 <ChevronDown size={16} style={styles.resultsIcon} />
-                <span style={styles.paginationText}>1 of 3 Pages</span>
-                <div style={styles.arrowButtons}>
-                  <button style={styles.arrowButton}>
-                    <ChevronDown size={18} style={styles.arrowLeft} />
-                  </button>
-                  <button style={styles.arrowButton}>
-                    <ChevronDown size={18} style={styles.arrowRight} />
-                  </button>
-                </div>
+                {totalPages > 1 && (
+                  <>
+                    <span style={styles.paginationText}>{currentPage} of {totalPages} Pages</span>
+                    <div style={styles.arrowButtons}>
+                      <button style={styles.arrowButton}>
+                        <ChevronDown size={18} style={styles.arrowLeft} />
+                      </button>
+                      <button style={styles.arrowButton}>
+                        <ChevronDown size={18} style={styles.arrowRight} />
+                      </button>
+                    </div>
+                  </>
+                )}
                 <button style={styles.gridButton}>
                   <Grid3x3 size={18} />
                 </button>
@@ -318,98 +218,78 @@ export default function DashboardScreen() {
                       <input type="checkbox" style={styles.checkbox} />
                     </th>
                     <th style={styles.tableHeaderCellText}>Name</th>
-                    <th style={styles.tableHeaderCellText}>Company</th>
-                    <th style={styles.tableHeaderCellText}>Phone</th>
                     <th style={styles.tableHeaderCellText}>Email</th>
-                    <th style={styles.tableHeaderCellText}>Added By</th>
-                    <th style={styles.tableHeaderCellText}>List</th>
+                    <th style={styles.tableHeaderCellText}>Phone</th>
+                    <th style={styles.tableHeaderCellText}>Destination</th>
                   </tr>
                 </thead>
                 <tbody style={styles.tableBody}>
-                  {leads.map((lead) => (
+                  {displayedLeads.map((lead) => (
                     <tr 
                       key={lead.id} 
                       style={styles.tableRow}
-                      onClick={() => setSelectedLead(lead)} // Click handler to open sidebar
+                      onClick={() => setSelectedLead(lead)}
                     >
                       <td style={styles.tableCell} onClick={(e) => e.stopPropagation()}> 
                         <input type="checkbox" style={styles.checkbox} />
                       </td>
                       <td style={styles.tableCell}>
                         <div style={styles.nameCell}>
-                          {lead.avatar ? (
-                            <img src={lead.avatar} alt={lead.name} style={styles.avatar} />
-                          ) : (
-                            <div 
-                              style={{...styles.avatarPlaceholder, backgroundColor: lead.bgColor}}
-                            >
-                              {lead.initials}
-                            </div>
-                          )}
+                          <div 
+                            style={{...styles.avatarPlaceholder, backgroundColor: '#0D8ABC'}}
+                          >
+                            {lead.name.charAt(0).toUpperCase()}
+                          </div>
                           <div>
                             <div style={styles.leadName}>{lead.name}</div>
-                            <div style={styles.leadTitle}>{lead.title}</div>
                           </div>
                         </div>
                       </td>
-                      <td style={styles.tableCell}>{lead.company}</td>
                       <td style={styles.tableCell}>
-                        <div style={styles.verificationCell}>
-                          <span style={styles.cellText}>{lead.phone}</span>
-                          {lead.phoneVerified && (
-                            <span style={styles.verificationBadge}>✓</span>
-                          )}
-                        </div>
+                        <span style={styles.cellText}>{lead.email}</span>
                       </td>
                       <td style={styles.tableCell}>
-                        <div style={styles.verificationCell}>
-                          <span style={styles.cellText}>{lead.email}</span>
-                          {lead.emailVerified && (
-                            <span style={styles.verificationBadge}>✓</span>
-                          )}
-                        </div>
+                        <span style={styles.cellText}>{lead.phoneNumber}</span>
                       </td>
                       <td style={styles.tableCell}>
-                        <div>
-                          <div style={styles.cellText}>{lead.addedBy}</div>
-                          <div style={styles.cellEmail}>{lead.addedByEmail}</div>
-                        </div>
+                        <span style={styles.cellText}>{lead.destination}</span>
                       </td>
-                      <td style={styles.tableCell}>{lead.list}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
 
-            <div style={styles.pagination}>
-              <button 
-                style={styles.paginationButton}
-                disabled={currentPage === 1}
-                onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
-              >
-                <ChevronDown size={18} style={styles.paginationChevronLeft} />
-              </button>
-              {[1, 2, 3, 4].map((page) => (
-                <button
-                  key={page}
-                  style={{
-                    ...styles.pageButton,
-                    ...(page === currentPage ? styles.pageButtonActive : styles.pageButtonInactive)
-                  }}
-                  onClick={() => setCurrentPage(page)}
+            {totalPages > 1 && (
+              <div style={styles.pagination}>
+                <button 
+                  style={styles.paginationButton}
+                  disabled={currentPage === 1}
+                  onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
                 >
-                  {page}
+                  <ChevronDown size={18} style={styles.paginationChevronLeft} />
                 </button>
-              ))}
-              <button 
-                style={styles.paginationButton}
-                disabled={currentPage === totalPages}
-                onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
-              >
-                <ChevronDown size={18} style={styles.paginationChevronRight} />
-              </button>
-            </div>
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                  <button
+                    key={page}
+                    style={{
+                      ...styles.pageButton,
+                      ...(page === currentPage ? styles.pageButtonActive : styles.pageButtonInactive)
+                    }}
+                    onClick={() => setCurrentPage(page)}
+                  >
+                    {page}
+                  </button>
+                ))}
+                <button 
+                  style={styles.paginationButton}
+                  disabled={currentPage === totalPages}
+                  onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
+                >
+                  <ChevronDown size={18} style={styles.paginationChevronRight} />
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

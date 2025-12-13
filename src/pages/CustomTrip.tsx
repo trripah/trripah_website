@@ -10,10 +10,12 @@ import { Checkbox } from "../components/ui/checkbox";
 import { Progress } from "../components/ui/progress";
 import { ArrowLeft, ArrowRight, CheckCircle } from "lucide-react";
 import { toast } from "sonner@2.0.3";
+import { submitTripRequest } from "../utils/ApiHandling";
 
 export function CustomTrip() {
   const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     destination: "",
     travelers: "",
@@ -52,12 +54,25 @@ export function CustomTrip() {
     }
   };
 
-  const handleSubmit = () => {
-    // In a real app, this would send data to backend
-    toast.success("Trip request submitted! Our team will contact you within 24 hours.");
-    setTimeout(() => {
-      navigate("/");
-    }, 2000);
+  const handleSubmit = async () => {
+    if (!formData.destination || !formData.travelers || !formData.duration || !formData.budget || !formData.accommodation || !formData.name || !formData.email || !formData.phone) {
+      toast.error("Please fill in all required fields");
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      await submitTripRequest(formData);
+      toast.success("Trip request submitted! Our team will contact you within 24 hours.");
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
+    } catch (error) {
+      toast.error("Failed to submit trip request. Please try again.");
+      console.error("Submission error:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const interests = [
@@ -350,9 +365,10 @@ export function CustomTrip() {
               ) : (
                 <Button
                   onClick={handleSubmit}
+                  disabled={isSubmitting}
                   className="bg-[#004C91] hover:bg-[#004C91]/90 text-white"
                 >
-                  Submit Trip Request
+                  {isSubmitting ? "Submitting..." : "Submit Trip Request"}
                   <CheckCircle className="w-4 h-4 ml-2" />
                 </Button>
               )}
