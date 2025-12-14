@@ -106,7 +106,7 @@ export function PackageDetail() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50" style={{marginTop: '-5rem'}}>
       {/* Image Gallery */}
       <section className="bg-black">
         <div className="container mx-auto px-4 py-8">

@@ -11,6 +11,7 @@ import { Progress } from "../components/ui/progress";
 import { ArrowLeft, ArrowRight, CheckCircle } from "lucide-react";
 import { toast } from "sonner@2.0.3";
 import { submitTripRequest } from "../utils/ApiHandling";
+import BGimage from "../assets/bg.webp";
 
 export function CustomTrip() {
   const navigate = useNavigate();
@@ -89,15 +90,24 @@ export function CustomTrip() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#FFF3E0] to-white py-12">
-      <div className="container mx-auto px-4 max-w-4xl">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="mb-4">Build Your Custom Trip</h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+    <div className="min-h-screen bg-linear-to-b from-[#FFF3E0] to-white" style={{marginTop: '-5rem',backgroundColor:'#FFF1E3'}}>
+      {/* Header with Background Image - Full Width */}
+      <div 
+        className="w-full py-20 px-6 bg-cover bg-center relative mb-3"
+        style={{
+          backgroundImage: `url(${BGimage})`,
+        }}
+      >
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="relative z-10 text-center">
+          <h1 className="mb-4 text-white" style={{fontWeight: 'bold', fontSize: 'clamp(2rem, 1vw, 3rem)',marginTop:'2rem'}}>Build Your Custom Trip</h1>
+          <p className="text-white max-w-2xl mx-auto">
             Tell us about your dream vacation and we'll create a personalized itinerary just for you
           </p>
         </div>
+      </div>
+
+      <div className="container mx-auto px-4 max-w-4xl py-12" >
 
         {/* Progress Bar */}
         <div className="mb-8">

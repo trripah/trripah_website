@@ -45,7 +45,7 @@ export function Header() {
           className="hover:opacity-80 transition-opacity"
           style={{ cursor: 'pointer' }}
         >
-          <img src={logo} alt="Travel Website Logo" className="h-8 md:h-10 w-auto" />
+          <img src={logo} alt="Travel Website Logo" className="h-12 md:h-12 w-auto" />
         </button>
 
         {/* Desktop Navigation */}

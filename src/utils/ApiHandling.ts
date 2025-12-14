@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {DataRequest, CreateDataRequest} from './dataType';
-const baseURL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000'; 
+const baseURL = 'https://backend-app-hyo5g.ondigitalocean.app'; 
 const apiClient = axios.create({
     baseURL,
 })
