@@ -102,24 +102,18 @@ export function About() {
       <section className="py-6 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="mb-4" style={{ fontSize: '2rem', fontWeight: 700 }}>Our Story</h2>
+            <div className="text-center mb-6">
+              <h2 className="mb-2" style={{ fontSize: '2rem', fontWeight: 400 }}>Our Story</h2>
             </div>
             <div className="space-y-6 text-gray-700 leading-relaxed">
               <p>
-                trripah was born from a simple belief: travel should be accessible, exciting, and hassle-free for everyone. 
-                Founded in 2020 by travel enthusiasts who were tired of complicated booking processes and generic tour packages, 
-                we set out to revolutionize how Indians experience international travel.
+                Trripah was born from a shared passion for travel and a simple yet powerful idea — every journey should feel effortless, personal, and unforgettable. Founded in 2025 by a group of avid travelers, we set out to reimagine international travel for modern Indians who seek more than just destinations.
               </p>
               <p>
-                What started as a small team of three passionate travelers has grown into a trusted travel partner for thousands 
-                of adventurers across India. We specialize in curating experiences to Southeast Asia and the Middle East, regions 
-                we know intimately through years of exploration and partnership building.
+                What started as a vision has grown into a thoughtfully crafted travel brand, built on first-hand experiences, trusted global partnerships, and an uncompromising attention to detail. From the turquoise waters of Southeast Asia to the vibrant cities of the Middle East, we design journeys that balance comfort, discovery, and authenticity.
               </p>
               <p>
-                Today, trripah stands for more than just bookings – we're your travel companions, your local guides, and your 
-                safety net when you're thousands of miles from home. Every package we create is infused with insider knowledge, 
-                attention to detail, and a genuine desire to make your journey unforgettable.
+                Today, Trripah stands as your travel companion — guiding you, supporting you, and taking care of every detail while you focus on creating memories. Because we believe the most meaningful journeys aren’t just planned — they’re felt.
               </p>
             </div>
           </div>

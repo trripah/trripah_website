@@ -32,23 +32,7 @@ export function Home() {
       startingPrice: "15,000",
       discount: "18% OFF",
     },
-    {
-      id: "dubai",
-      name: "Dubai",
-      image: "https://images.unsplash.com/photo-1643904736472-8b77e93ca3d7?q=80&w=1080",
-      description: "Modern marvels",
-      startingPrice: "24,999",
-      discount: "22% OFF",
-    },
-    {
-      id: "maldives",
-      name: "Maldives",
-      image: "https://images.unsplash.com/photo-1637576308588-6647bf80944d?q=80&w=1080",
-      description: "Luxury island getaway",
-      startingPrice: "35,999",
-      discount: "30% OFF",
-    },
-    {
+        {
       id: "bali",
       name: "Bali",
       image: "https://images.unsplash.com/photo-1656247203824-3d6f99461ba4?q=80&w=1080",
@@ -64,12 +48,30 @@ export function Home() {
       startingPrice: "19,999",
       discount: "20% OFF",
     },
+    {
+      id: "dubai",
+      name: "Dubai",
+      image: "https://images.unsplash.com/photo-1643904736472-8b77e93ca3d7?q=80&w=1080",
+      description: "Modern marvels",
+      startingPrice: "24,999",
+      discount: "22% OFF",
+    },
+    {
+      id: "singapore",
+      name: "Singapore",
+      image: "https://images.unsplash.com/photo-1637576308588-6647bf80944d?q=80&w=1080",
+      description: "Luxury island getaway",
+      startingPrice: "35,999",
+      discount: "30% OFF",
+    },
+
   ];
+
 
   const indiaDestinations = [
     {
-      id: "tamilnadu",
-      name: "Tamil Nadu",
+      id: "jammu_kashmir",
+      name: "Jammu Kashmir",
       image: TamilnaduImage,
       description: "Temples & culture",
       startingPrice: "9,999",
@@ -267,28 +269,28 @@ export function Home() {
 
           <div className="relative z-10 container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8 text-white py-20 md:py-0" data-hero-content>
               <div className="flex flex-col justify-start items-start text-start md:text-left w-full md:w-[60%] px-4 md:px-16">
-                  <h1 className="text-white" style={{ fontSize: 'clamp(1.5rem, 5vw, 3rem)', fontWeight: 700 }}>
+                  <h1 className="text-white" style={{ fontSize: 'clamp(1.5rem, 5vw, 3rem)', fontWeight: 600 }}>
                       Discover Your Next
                   </h1>
-                  <h1 className="text-white mb-6" style={{ fontSize: 'clamp(1.5rem, 5vw, 3rem)', fontWeight: 700 }}>
+                  <h1 className="text-white mb-6" style={{ fontSize: 'clamp(1.5rem, 5vw, 3rem)', fontWeight: 600 }}>
                       Adventure
                   </h1>
                   <p className="text-white/90 mb-1" style={{ fontSize: 'clamp(.75rem, 2vw, 1.15rem)' }}>
-                      Curated travel experiences to Thailand, Maldives,
+                      Handcrafted travel experiences across Thailand, Bali, Vietnam
                   </p>
                   <p className="text-white/90 mb-8" style={{ fontSize: 'clamp(.75rem, 2vw, 1.15rem)' }}>
-                      Vietnam, Bali & Dubai
+                       Maldives & Dubai
                   </p>
               </div>
-              <div className="w-full md:w-[40%] md:px-4 flex justify-center md:justify-end" style={{ width: '100%', maxWidth: '400px', }}> 
+              <div className="w-full md:w-[40%] md:px-6 flex justify-center md:justify-end" style={{ width: '100%', maxWidth: '380px', }}> 
                   <Card className="w-full border-none bg-white rounded-sm" style={{ boxShadow: '0 10px 20px rgba(0, 0, 0, 0.9)' }}>
                       <CardContent className="px-4 py-2">
-                          <div className="mb-6 space-y-2">
-                              <h1 className=" text-gray-900" style={{ fontSize: '1.5rem', fontWeight: '500' }}>
+                          <div className="mb-4 space-y-2">
+                              <h1 className=" text-gray-900" style={{ fontSize: '1.5rem', fontWeight: '400' }}>
                                   Plan your trip with us
                               </h1>
                               <p className="text-[0.75rem] text-gray-500 leading-relaxed">
-                                  At RealRoadies, we redefine corporate events by merging adventure, team
+                                  Personalized itineraries, transparent pricing, zero stress.
                               </p>
                           </div>
                           <div className="flex flex-col gap-4">
@@ -322,7 +324,7 @@ export function Home() {
                               <Button
                                   className="w-full h-12 mt-2 text-white font-semibold text-base "
                                   onClick={() => navigate("/packages")}
-                                  style={{ backgroundColor: '#2b70e4', cursor: 'pointer' }}
+                                  style={{ backgroundColor: '#2b70e4', cursor: 'pointer' , borderRadius: '5px'}}
                               >
                                   Get in touch
                               </Button>
@@ -412,15 +414,15 @@ export function Home() {
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div style={styles.statItem} data-stat-item-hide>
                 <span style={styles.statNumber} data-stat-number>100+</span>
-                <span style={styles.statText} data-stat-text>At RealRoadies, we<br/>corporate events by</span>
+                <span style={styles.statText} data-stat-text>Expertly curated <br/>travel experiences</span>
             </div>
             <div style={styles.statItem} data-stat-item-hide>
-                <span style={styles.statNumber} data-stat-number>100+</span>
-                <span style={styles.statText} data-stat-text>At RealRoadies, we<br/>corporate events by</span>
+                <span style={styles.statNumber} data-stat-number>1k+</span>
+                <span style={styles.statText} data-stat-text>Satisfied travelers <br/>and counting</span>
             </div>
             <div style={styles.statItem}>
-                <span style={styles.statNumber} data-stat-number>100+</span>
-                <span style={styles.statText} data-stat-text>At RealRoadies, we<br/>corporate events by</span>
+                <span style={styles.statNumber} data-stat-number>24/7</span>
+                <span style={styles.statText} data-stat-text>Dedicated travel<br/> support</span>
             </div>
         </div>
       </section>
@@ -429,9 +431,9 @@ export function Home() {
       <section className="py-16">
         <div className="container mx-auto">
           <div className="text-center mb-3 px-4">
-            <h2 className="mb-4" style={{fontSize: '1.875rem', fontWeight: '700'}} data-section-title>Exclusive Deals & Packages</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto" data-exclusive-subtitle data-subtitle>
-              Limited-time offers on our most popular travel packages
+            <h2 className="mb-4" style={styles.sectionTitle} data-section-title>Travel More, Spend Less</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto" style={styles.sectionSubtitle} data-exclusive-subtitle data-subtitle>
+              Our most-loved travel experiences at special prices. Limited-time offers you don’t want to miss.
             </p>
           </div>
           
@@ -472,9 +474,9 @@ export function Home() {
       <section style={styles.whyTrippahSection} data-why-trippah-section>
         <div style={styles.whyTrippahContainer} data-why-trippah-container>
           <div style={styles.whyTrippahHeader} data-why-trippah-header>
-            <h2 style={styles.whyTrippahTitle}data-section-title>Why Choose trripah?</h2>
-            <p style={styles.whyTrippahSubtitle} data-subtitle>
-              We're committed to making your travel dreams a reality
+            <h2 style={styles.sectionTitle}data-section-title>Why Choose Trripah?</h2>
+            <p style={styles.sectionSubtitle} data-subtitle>
+              Exceptional destinations, thoughtfully planned.Because great journeys begin with great planning.
             </p>
           </div>
           <div style={styles.whyTrippahGrid} data-why-trippah-grid>
@@ -497,8 +499,8 @@ export function Home() {
       <section style={styles.testimonialsSection} data-testimonials-section>
         <div style={styles.testimonialsContainer} data-testimonials-container>
           <div style={styles.testimonialsHeader} data-testimonials-header>
-            <h2 style={styles.testimonialsTitle} data-section-title>What Our Travelers Say</h2>
-            <p style={styles.testimonialsSubtitle} data-subtitle>
+            <h2 style={styles.sectionTitle} data-section-title>What Our Travelers Say</h2>
+            <p style={styles.sectionSubtitle} data-subtitle>
               Real stories from real travelers who experienced the trripah difference
             </p>
           </div>
@@ -524,8 +526,8 @@ export function Home() {
       <section style={styles.blogSection} data-blog-section>
         <div style={styles.blogContainer} data-blog-container>
           <div style={styles.blogHeader} data-blog-header>
-            <h2 style={styles.blogTitle} data-section-title>Travel Stories & Guides</h2>
-            <p style={styles.blogSubtitle} data-subtitle>
+            <h2 style={styles.sectionTitle} data-section-title>Travel Stories & Guides</h2>
+            <p style={styles.sectionSubtitle} data-subtitle>
               Get inspired with our latest travel tips and destination guides
             </p>
           </div>
@@ -562,7 +564,7 @@ export function Home() {
               className="border-[#5B4FE6] text-[#5B4FE6] hover:bg-[#5B4FE6] hover:text-white"
               style={{ cursor: 'pointer' }}
             >
-              Visit Our Blog
+              View All Blog Posts
             </Button>
           </div>
         </div>
@@ -720,7 +722,7 @@ const styles = {
   },
   sectionTitle: {
     fontSize: '1.875rem',
-    fontWeight: '700',
+    fontWeight: '500',
     marginBottom: '1rem',
     color: '#1a1a1a',
   },
@@ -728,7 +730,7 @@ const styles = {
     color: '#666',
     maxWidth: '600px',
     margin: '0 auto 2rem auto',
-    fontSize: '0.75rem',
+    fontSize: '1rem',
     lineHeight: '1.5',
   },
   tabContainer: {
@@ -788,7 +790,7 @@ const styles = {
     width: '100%',
     height: '350px',
     cursor: 'pointer',
-    borderRadius: '4px',
+    borderRadius: '05px',
     overflow: 'hidden',
     position: 'relative' as 'relative',
     transition: 'transform 0.3s ease',
@@ -819,26 +821,26 @@ const styles = {
   cardTitle: {
     color: 'white',
     fontSize: '1.75rem',
-    fontWeight: '600',
+    fontWeight: '400',
     marginBottom: '4px',
     transform: 'scaleX(-1)',
   },
   cardTitle1: {
     color: 'white',
     fontSize: '1.75rem',
-    fontWeight: '600',
+    fontWeight: '400',
     marginBottom: '4px',
   },
   cardPrice: {
     color: 'rgba(255,255,255,0.9)',
     fontSize: '1rem',
-    fontWeight: '500',
+    fontWeight: '400',
     transform: 'scaleX(-1)',
   },
   cardPrice1: {
     color: 'rgba(255,255,255,0.9)',
     fontSize: '1rem',
-    fontWeight: '500',
+    fontWeight: '400',
   },
   discountBadge: {
     position: 'absolute' as 'absolute',
@@ -857,12 +859,12 @@ const styles = {
     position: 'absolute' as 'absolute',
     top: '10px',
     right: '10px',
-    backgroundColor: '#ff4757',
+    backgroundColor: 'red',
     color: 'white',
-    padding: '8px 12px',
+    padding: '3px 8px',
     borderRadius: '4px',
     fontSize: '0.85rem',
-    fontWeight: '600',
+    fontWeight: '500',
     zIndex: 10,
   },
   statsSection: {
@@ -1049,7 +1051,7 @@ const styles = {
   blogCardTitle: {
     marginBottom: '12px',
     fontSize: '1.125rem',
-    fontWeight: '600',
+    fontWeight: '500',
     color: '#1a1a1a',
   },
   blogExcerpt: {
