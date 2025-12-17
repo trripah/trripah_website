@@ -9,6 +9,17 @@ export function Reviews() {
   const [filterRating, setFilterRating] = useState("all");
   const [filterDestination, setFilterDestination] = useState("all");
 
+  const reviewsStyles = `
+    @media (min-width: 1024px) {
+      .reviews-rating,
+      .reviews-grid,
+      .reviews-trust {
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+    }
+  `;
+
   const testimonials = [
     {
       name: "Priya & Rahul Sharma",
@@ -97,8 +108,9 @@ export function Reviews() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <style>{reviewsStyles}</style>
       {/* Hero */}
-      <section className="bg-gradient-to-r from-[#004C91] to-[#003366] text-white py-20">
+      <section className="bg-gradient-to-r from-[#004C91] to-[#003366] text-white py-20" style={{ marginTop: '-5rem', paddingTop: '6rem' }}>
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-white mb-4">Customer Reviews</h1>
           <p className="text-white/90 max-w-2xl mx-auto">
@@ -108,7 +120,7 @@ export function Reviews() {
       </section>
 
       {/* Overall Rating */}
-      <section className="py-16">
+      <section className="py-16 px-4 reviews-rating" >
         <div className="container mx-auto px-4">
           <Card className="max-w-4xl mx-auto mb-12">
             <CardContent className="p-8">
@@ -187,7 +199,7 @@ export function Reviews() {
           </div>
 
           {/* Reviews Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reviews-grid">
             {testimonials.map((testimonial, index) => (
               <TestimonialCard key={index} {...testimonial} />
             ))}
@@ -196,7 +208,7 @@ export function Reviews() {
       </section>
 
       {/* Trust Indicators */}
-      <section className="py-16 bg-[#FFF3E0]">
+      <section className="py-16 bg-[#FFF3E0] px-4 reviews-trust">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-center mb-12">Why Travelers Trust trripah</h2>

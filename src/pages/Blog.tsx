@@ -13,6 +13,18 @@ export function Blog() {
   const [filterCategory, setFilterCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
 
+  const blogStyles = `
+    @media (min-width: 1024px) {
+      .blog-featured,
+      .blog-grid,
+      .blog-newsletter,
+      .blog-cta {
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+    }
+  `;
+
   const blogPosts = [
     {
       id: 1,
@@ -117,8 +129,9 @@ export function Blog() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <style>{blogStyles}</style>
       {/* Hero */}
-      <section className="bg-gradient-to-r from-[#004C91] to-[#003366] text-white py-20">
+      <section className="bg-gradient-to-r from-[#004C91] to-[#003366] text-white py-20" style={{ marginTop: '-5rem', paddingTop: '6rem',}}>
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-white mb-4">Travel Blog & Guides</h1>
           <p className="text-white/90 max-w-2xl mx-auto">
@@ -157,7 +170,7 @@ export function Blog() {
       </section>
 
       {/* Featured Post */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-white px-4 blog-featured">
         <div className="container mx-auto px-4">
           <Card className="overflow-hidden hover:shadow-xl transition-shadow cursor-pointer">
             <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -192,7 +205,7 @@ export function Blog() {
       </section>
 
       {/* Blog Grid */}
-      <section className="py-16">
+      <section className="py-16 px-4 blog-grid">
         <div className="container mx-auto px-4">
           <div className="mb-8">
             <h2 className="mb-2">Latest Articles</h2>
@@ -241,7 +254,7 @@ export function Blog() {
       </section>
 
       {/* Newsletter */}
-      <section className="py-16 bg-gradient-to-r from-[#FF7B00] to-[#FF9500]">
+      <section className="py-16 bg-gradient-to-r from-[#FF7B00] to-[#FF9500] px-4 blog-newsletter">
         <div className="container mx-auto px-4">
           <Card className="max-w-2xl mx-auto">
             <CardContent className="p-8 text-center">
@@ -268,7 +281,7 @@ export function Blog() {
       </section>
 
       {/* CTA */}
-      <section className="py-16">
+      <section className="py-16 px-4 blog-cta">
         <div className="container mx-auto px-4 text-center">
           <h2 className="mb-4">Ready to Turn Inspiration Into Reality?</h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">

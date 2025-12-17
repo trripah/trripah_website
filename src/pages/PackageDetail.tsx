@@ -13,6 +13,15 @@ export function PackageDetail() {
   const navigate = useNavigate();
   const [selectedImage, setSelectedImage] = useState(0);
 
+  const packageDetailStyles = `
+    @media (min-width: 1024px) {
+      .package-info-section {
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+    }
+  `;
+
   // Mock package data
   const packageData = {
     id: "romantic-maldives",
@@ -106,7 +115,8 @@ export function PackageDetail() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50" style={{marginTop: '-5rem'}}>
+    <div className="min-h-screen bg-gray-50" style={{marginTop: '-5rem' }}>
+      <style>{packageDetailStyles}</style>
       {/* Image Gallery */}
       <section className="bg-black">
         <div className="container mx-auto px-4 py-8">
@@ -142,7 +152,7 @@ export function PackageDetail() {
       </section>
 
       {/* Package Info */}
-      <section className="py-8">
+      <section className="py-8 px-4 package-info-section">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Main Content */}
