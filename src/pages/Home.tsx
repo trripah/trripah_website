@@ -16,6 +16,7 @@ import NorthEast from '../assets/northEast.jpg'
 import Rajastan from '../assets/rajastan.jpg'
 import India from '../assets/India Flag.svg'
 import World from '../assets/world-map.svg'
+import DetailsData from '../DetailsData.json';
 
 export function Home() {
   const navigate = useNavigate();
@@ -23,236 +24,36 @@ export function Home() {
   const [searchBudget, setSearchBudget] = useState("");
   const [activeTab, setActiveTab] = useState("international");
 
-  const internationalDestinations = [
-    {
-      id: "thailand",
-      name: "Thailand",
-      image: "https://images.unsplash.com/flagged/photo-1575834678162-9fd77151f40b?q=80&w=1080",
-      description: "Tropical paradise",
-      startingPrice: "15,000",
-      discount: "18% OFF",
-    },
-        {
-      id: "bali",
-      name: "Bali",
-      image: "https://images.unsplash.com/photo-1656247203824-3d6f99461ba4?q=80&w=1080",
-      description: "Spiritual retreats",
-      startingPrice: "22,999",
-      discount: "16% OFF",
-    },
-    {
-      id: "vietnam",
-      name: "Vietnam",
-      image: "https://images.unsplash.com/photo-1703555853329-b9fab31e92ad?q=80&w=1080",
-      description: "Rich history",
-      startingPrice: "19,999",
-      discount: "20% OFF",
-    },
-    {
-      id: "dubai",
-      name: "Dubai",
-      image: "https://images.unsplash.com/photo-1643904736472-8b77e93ca3d7?q=80&w=1080",
-      description: "Modern marvels",
-      startingPrice: "24,999",
-      discount: "22% OFF",
-    },
-    {
-      id: "singapore",
-      name: "Singapore",
-      image: "https://images.unsplash.com/photo-1637576308588-6647bf80944d?q=80&w=1080",
-      description: "Luxury island getaway",
-      startingPrice: "35,999",
-      discount: "30% OFF",
-    },
-
-  ];
-
-
-  const indiaDestinations = [
-    {
-      id: "jammu_kashmir",
-      name: "Jammu Kashmir",
-      image: TamilnaduImage,
-      description: "Temples & culture",
-      startingPrice: "9,999",
-      discount: "20% OFF",
-    },
-    {
-      id: "goa",
-      name: "Goa",
-      image: GoaImage,
-      description: "Beaches & culture",
-      startingPrice: "8,999",
-      discount: "15% OFF",
-    },
-    {
-      id: "kerala",
-      name: "Kerala",
-      image: KeralaImage,
-      description: "Backwaters paradise",
-      startingPrice: "10,999",
-      discount: "25% OFF",
-    },
-    {
-      id: "rajasthan",
-      name: "Rajasthan",
-      image: Rajastan,
-      description: "Palaces & deserts",
-      startingPrice: "12,999",
-      discount: "10% OFF",
-    },
-    {
-      id: "north-east",
-      name: "North-East India",
-      image: NorthEast,
-      description: "Mountains & culture",
-      startingPrice: "14,999",
-      discount: "12% OFF",
-    },
-  ];
+  const internationalDestinations = DetailsData.internationalDestinations;
+  
+  const indiaDestinations = DetailsData.indiaDestinations.map(dest => ({
+    ...dest,
+    image: dest.id === "tamilnadu" ? TamilnaduImage : 
+           dest.id === "goa" ? GoaImage : 
+           dest.id === "kerala" ? KeralaImage : 
+           dest.id === "rajasthan" ? Rajastan : 
+           dest.id === "north-east" ? NorthEast : undefined
+  }));
 
   const destinations = activeTab === "international" ? internationalDestinations : indiaDestinations;
 
-  const featuredPackages = [
-    {
-      id: "romantic-maldives",
-      title: "Romantic Maldives Getaway",
-      destination: "Maldives",
-      image: "https://images.unsplash.com/photo-1637576308588-6647bf80944d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWxkaXZlcyUyMG92ZXJ3YXRlciUyMGJ1bmdhbG93fGVufDF8fHx8MTc2MTc5MzMwMHww&ixlib=rb-4.1.0&q=80&w=1080  ",
-      duration: "4N/5D",
-      groupSize: "2 People",
-      price: "35,999",
-      highlights: [
-        "Overwater villa stay",
-        "Romantic candlelight dinner",
-        "Snorkeling & water sports",
-      ],
-      category: "Honeymoon",
-      discount: "28% OFF",
-    },
-    {
-      id: "thailand-adventure",
-      title: "Thailand Island Hopping",
-      destination: "Thailand",
-      image: "https://images.unsplash.com/flagged/photo-1575834678162-9fd77151f40b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aGFpbGFuZCUyMGJlYWNoJTIwdHJvcGljYWx8ZW58MXx8fHwxNzYxNzg3MDEzfDA&ixlib=rb-4.1.0&q=80&w=1080  ",
-      duration: "6N/7D",
-      groupSize: "4-6 People",
-      price: "18,999",
-      highlights: [
-        "Phi Phi Islands tour",
-        "Bangkok city exploration",
-        "Beach resort stay",
-      ],
-      category: "Adventure",
-      discount: "25% OFF",
-    },
-    {
-      id: "dubai-luxury",
-      title: "Dubai Luxury Experience",
-      destination: "Dubai",
-      image: "https://images.unsplash.com/photo-1643904736472-8b77e93ca3d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkdWJhaSUyMHNreWxpbmUlMjBidXJqJTIwa2hhbGlmYXxlbnwxfHx8fDE3NjE4MDUyMzB8MA&ixlib=rb-4.1.0&q=80&w=1080  ",
-      duration: "5N/6D",
-      groupSize: "2-4 People",
-      price: "24,999",
-      highlights: [
-        "Burj Khalifa visit",
-        "Desert safari with BBQ",
-        "Luxury hotel accommodation",
-      ],
-      category: "Luxury",
-      discount: "24% OFF",
-    },
-    {
-        id: "vietnam-explorer",
-        title: "Vietnam Highlights",
-        destination: "Vietnam",
-        image: "https://images.unsplash.com/photo-1703555853329-b9fab31e92ad?q=80&w=1080",
-        duration: "6N/7D",
-        groupSize: "2-6 People",
-        price: "19,999",
-        highlights: ["Ha Long Bay", "Hanoi Street Food", "Hoi An Ancient Town"],
-        category: "Culture",
-        discount: "20% OFF"
-    },
-    {
-        id: "bali-retreat",
-        title: "Bali Spiritual Retreat",
-        destination: "Bali",
-        image: "https://images.unsplash.com/photo-1656247203824-3d6f99461ba4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYWxpJTIwc3BpcnR1YWwlMjByZXRyZWF0fGVufDF8fHx8fDE3NjE4MjA5ODh8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        duration: "5N/6D",
-        groupSize: "2-4 People",
-        price: "22,999",
-        highlights: ["Yoga & meditation", "Temple visits", "Traditional spa"],
-        category: "Wellness",
-        discount: "18% OFF"
-    }
-  ];
+  const featuredPackages = DetailsData.packages.slice(0, 5);
 
-  const testimonials = [
-    {
-      name: "Priya & Rahul",
-      location: "Mumbai, India",
-      rating: 5,
-      comment: "trripah made our honeymoon in Maldives absolutely magical! Every detail was perfect.",
-      tripDestination: "Maldives",
-      image: "https://images.unsplash.com/photo-1617153374846-6ebdc6369941?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWFjaCUyMHN1bnNldCUyMGNvdXBsZXxlbnwxfHx8fDE3NjE4MTMyMzl8MA&ixlib=rb-4.1.0&q=80&w=1080  ",
-    },
-    {
-      name: "Amit Kumar",
-      location: "Delhi, India",
-      rating: 5,
-      comment: "Best Thailand trip ever! The itinerary was well-planned and the support team was amazing.",
-      tripDestination: "Thailand",
-      image: "https://images.unsplash.com/photo-1709572366321-524da39b27e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmF2ZWwlMjBhZHZlbnR1cmUlMjBoYXBweSUyMHRvdXJpc3RzfGVufDF8fHx8MTc2MTgyMDk4OHww&ixlib=rb-4.1.0&q=80&w=1080  ",
-    },
-    {
-      name: "Sneha Patel",
-      location: "Bangalore, India",
-      rating: 5,
-      comment: "Dubai was a dream come true! Everything from flights to hotels was seamless.",
-      tripDestination: "Dubai",
-      image: "https://images.unsplash.com/photo-1722409195473-d322e99621e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjByZXNvcnQlMjBwb29sfGVufDF8fHx8MTc2MTc0MzI5NXww&ixlib=rb-4.1.0&q=80&w=1080  ",
-    },
-  ];
+  const testimonials = DetailsData.testimonials;
 
-  const whyTrippah = [
-    {
-      icon: Sparkles,
-      title: "Curated Trips",
-      description: "Handpicked destinations and experiences tailored to your preferences",
-    },
-    {
-      icon: HeadphonesIcon,
-      title: "24/7 Expert Support",
-      description: "Round-the-clock assistance from our travel experts",
-    },
-    {
-      icon: Shield,
-      title: "Hassle-free Bookings",
-      description: "Simple, secure, and transparent booking process",
-    },
-  ];
+  const whyTrippahData = DetailsData.whyTrippah;
+  const whyTrippah = whyTrippahData.map(item => ({
+    ...item,
+    icon: item.title === "Curated Trips" ? Sparkles : 
+          item.title === "24/7 Expert Support" ? HeadphonesIcon : Shield,
+  }));
 
-  const blogPosts = [
-    {
-      title: "10 Hidden Gems in Thailand",
-      image: "https://images.unsplash.com/flagged/photo-1575834678162-9fd77151f40b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aGFpbGFuZCUyMGJlYWNoJTIwdHJvcGljYWx8ZW58MXx8fHwxNzYxNzg3MDEzfDA&ixlib=rb-4.1.0&q=80&w=1080  ",
-      excerpt: "Discover the lesser-known treasures of Thailand beyond the tourist hotspots.",
-      date: "Oct 25, 2025",
-    },
-    {
-      title: "Ultimate Maldives Travel Guide",
-      image: "https://images.unsplash.com/photo-1637576308588-6647bf80944d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWxkaXZlcyUyMG92ZXJ3YXRlciUyMGJ1bmdhbG93fGVufDF8fHx8MTc2MTc5MzMwMHww&ixlib=rb-4.1.0&q=80&w=1080  ",
-      excerpt: "Everything you need to know for your perfect Maldives vacation.",
-      date: "Oct 20, 2025",
-    },
-    {
-      title: "Dubai on a Budget",
-      image: "https://images.unsplash.com/photo-1643904736472-8b77e93ca3d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkdWJhaSUyMHNreWxpbmUlMjBidXJqJTIwa2hhbGlmYXxlbnwxfHx8fDE3NjE4MDUyMzB8MA&ixlib=rb-4.1.0&q=80&w=1080  ",
-      excerpt: "Experience Dubai's luxury without breaking the bank. Here's how!",
-      date: "Oct 15, 2025",
-    },
-  ];
+  const blogPosts = DetailsData.blogPosts.slice(0, 3).map(post => ({
+    title: post.title,
+    image: post.image,
+    excerpt: post.excerpt,
+    date: post.date,
+  }));
 
   return (
     <div className="min-h-screen" style={{ overflow: 'visible' }}>
@@ -369,7 +170,7 @@ export function Home() {
                 }}
               >
                 <img src={India} alt="India" style={{ height: '20px', width: '20px' }} />
-                Incredible India
+                India
               </button>
             </div>
           </div>

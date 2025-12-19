@@ -3,6 +3,7 @@ import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import { Shield, Heart, Award, Users, MapPin, Globe } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import DetailsData from '../DetailsData.json';
 
 export function About() {
   const navigate = useNavigate();
@@ -15,65 +16,17 @@ export function About() {
     }
   `;
 
-  const values = [
-    {
-      icon: Heart,
-      title: "Passion for Travel",
-      description: "We live and breathe travel. Every journey we create is infused with our love for exploration.",
-    },
-    {
-      icon: Shield,
-      title: "Safety & Trust",
-      description: "Your safety is our priority. We partner with verified hotels and trusted service providers.",
-    },
-    {
-      icon: Award,
-      title: "Excellence in Service",
-      description: "From planning to execution, we maintain the highest standards of service quality.",
-    },
-    {
-      icon: Users,
-      title: "Customer First",
-      description: "Your satisfaction drives us. We go the extra mile to exceed your expectations.",
-    },
-  ];
+  const valuesData = DetailsData.aboutValues;
+  const values = valuesData.map(val => ({
+    ...val,
+    icon: val.title === "Passion for Travel" ? Heart :
+          val.title === "Safety & Trust" ? Shield :
+          val.title === "Excellence in Service" ? Award : Users,
+  }));
 
-  const stats = [
-    { number: "10,000+", label: "Happy Travelers" },
-    { number: "50+", label: "Destinations" },
-    { number: "4.9/5", label: "Average Rating" },
-    { number: "24/7", label: "Support Available" },
-  ];
-
-  const team = [
-    {
-      name: "Rohan Mehta",
-      role: "Founder & CEO",
-      image: "https://images.unsplash.com/photo-1709572366321-524da39b27e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmF2ZWwlMjBhZHZlbnR1cmUlMjBoYXBweSUyMHRvdXJpc3RzfGVufDF8fHx8MTc2MTgyMDk4OHww&ixlib=rb-4.1.0&q=80&w=1080",
-      bio: "10+ years in travel industry. Passionate about creating memorable experiences.",
-    },
-    {
-      name: "Priya Sharma",
-      role: "Head of Operations",
-      image: "https://images.unsplash.com/photo-1617153374846-6ebdc6369941?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWFjaCUyMHN1bnNldCUyMGNvdXBsZXxlbnwxfHx8fDE3NjE4MTMyMzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      bio: "Expert in logistics and customer service. Ensures smooth travel experiences.",
-    },
-    {
-      name: "Amit Kumar",
-      role: "Travel Consultant",
-      image: "https://images.unsplash.com/photo-1722409195473-d322e99621e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjByZXNvcnQlMjBwb29sfGVufDF8fHx8MTc2MTc0MzI5NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      bio: "Specializes in Southeast Asia. Visited 30+ countries and counting!",
-    },
-  ];
-
-  const partners = [
-    "MakeMyTrip",
-    "Booking.com",
-    "Airbnb",
-    "Thomas Cook",
-    "Agoda",
-    "Expedia",
-  ];
+  const stats = DetailsData.aboutStats;
+  const team = DetailsData.teamMembers;
+  const partners = DetailsData.partners;
 
   return (
     <div className="min-h-screen">

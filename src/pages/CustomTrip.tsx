@@ -12,6 +12,7 @@ import { ArrowLeft, ArrowRight, CheckCircle } from "lucide-react";
 import { toast } from "sonner@2.0.3";
 import { submitTripRequest } from "../utils/ApiHandling";
 import BGimage from "../assets/bg.webp";
+import DetailsData from '../DetailsData.json';
 
 export function CustomTrip() {
   const navigate = useNavigate();
@@ -76,18 +77,7 @@ export function CustomTrip() {
     }
   };
 
-  const interests = [
-    "Adventure Sports",
-    "Beach & Relaxation",
-    "Cultural Exploration",
-    "Food & Cuisine",
-    "Wildlife & Nature",
-    "Photography",
-    "Wellness & Spa",
-    "Shopping",
-    "Nightlife",
-    "Historical Sites",
-  ];
+  const interests = DetailsData.interests;
 
   return (
     <div className="min-h-screen bg-linear-to-b from-[#FFF3E0] to-white" style={{marginTop: '-5rem',backgroundColor:'#FFF1E3'}}>

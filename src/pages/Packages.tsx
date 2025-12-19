@@ -7,6 +7,7 @@ import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import HomeImage from '../assets/bg.png';
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import DetailsData from '../DetailsData.json';
 
 export function Packages() {
   const navigate = useNavigate();
@@ -31,98 +32,7 @@ export function Packages() {
   const [filterCategory, setFilterCategory] = useState("all");
   const [filterDuration, setFilterDuration] = useState("all");
 
-  const packages = [
-    {
-      id: "romantic-maldives",
-      title: "Romantic Maldives Getaway",
-      destination: "Maldives",
-      image: "https://images.unsplash.com/photo-1637576308588-6647bf80944d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWxkaXZlcyUyMG92ZXJ3YXRlciUyMGJ1bmdhbG93fGVufDF8fHx8MTc2MTc5MzMwMHww&ixlib=rb-4.1.0&q=80&w=1080",
-      duration: "4N/5D",
-      groupSize: "2 People",
-      price: "35,999",
-      highlights: [
-        "Overwater villa stay",
-        "Romantic candlelight dinner",
-        "Snorkeling & water sports",
-      ],
-      category: "Honeymoon",
-    },
-    {
-      id: "thailand-adventure",
-      title: "Thailand Island Hopping",
-      destination: "Thailand",
-      image: "https://images.unsplash.com/flagged/photo-1575834678162-9fd77151f40b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aGFpbGFuZCUyMGJlYWNoJTIwdHJvcGljYWx8ZW58MXx8fHwxNzYxNzg3MDEzfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      duration: "6N/7D",
-      groupSize: "4-6 People",
-      price: "18,999",
-      highlights: [
-        "Phi Phi Islands tour",
-        "Bangkok city exploration",
-        "Beach resort stay",
-      ],
-      category: "Adventure",
-    },
-    {
-      id: "dubai-luxury",
-      title: "Dubai Luxury Experience",
-      destination: "Dubai",
-      image: "https://images.unsplash.com/photo-1643904736472-8b77e93ca3d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkdWJhaSUyMHNreWxpbmUlMjBidXJqJTIwa2hhbGlmYXxlbnwxfHx8fDE3NjE4MDUyMzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      duration: "5N/6D",
-      groupSize: "2-4 People",
-      price: "24,999",
-      highlights: [
-        "Burj Khalifa visit",
-        "Desert safari with BBQ",
-        "Luxury hotel accommodation",
-      ],
-      category: "Luxury",
-    },
-    {
-      id: "bali-spiritual",
-      title: "Bali Spiritual Retreat",
-      destination: "Bali",
-      image: "https://images.unsplash.com/photo-1656247203824-3d6f99461ba4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYWxpJTIwcmljZSUyMHRlcnJhY2VzfGVufDF8fHx8MTc2MTc2OTMyNnww&ixlib=rb-4.1.0&q=80&w=1080",
-      duration: "7N/8D",
-      groupSize: "2-4 People",
-      price: "22,999",
-      highlights: [
-        "Ubud rice terraces",
-        "Temple visits",
-        "Yoga and meditation sessions",
-      ],
-      category: "Wellness",
-    },
-    {
-      id: "vietnam-culture",
-      title: "Vietnam Cultural Explorer",
-      destination: "Vietnam",
-      image: "https://images.unsplash.com/photo-1703555853329-b9fab31e92ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aWV0bmFtJTIwaGFsb25nJTIwYmF5fGVufDF8fHx8MTc2MTgyMDk4OHww&ixlib=rb-4.1.0&q=80&w=1080",
-      duration: "5N/6D",
-      groupSize: "2-6 People",
-      price: "19,999",
-      highlights: [
-        "Halong Bay cruise",
-        "Hanoi Old Quarter tour",
-        "Vietnamese cooking class",
-      ],
-      category: "Culture",
-    },
-    {
-      id: "thailand-family",
-      title: "Thailand Family Fun Package",
-      destination: "Thailand",
-      image: "https://images.unsplash.com/flagged/photo-1575834678162-9fd77151f40b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aGFpbGFuZCUyMGJlYWNoJTIwdHJvcGljYWx8ZW58MXx8fHwxNzYxNzg3MDEzfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      duration: "6N/7D",
-      groupSize: "4-6 People",
-      price: "21,999",
-      highlights: [
-        "Safari World Bangkok",
-        "Elephant sanctuary visit",
-        "Beach activities for kids",
-      ],
-      category: "Family",
-    },
-  ];
+  const packages = DetailsData.packages;
 
   return (
     <div className="min-h-screen bg-gray-50">

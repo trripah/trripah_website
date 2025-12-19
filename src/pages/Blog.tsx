@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { Calendar, Clock, ArrowRight, Search } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { useState } from "react";
+import DetailsData from '../DetailsData.json';
 
 export function Blog() {
   const navigate = useNavigate();
@@ -25,107 +26,8 @@ export function Blog() {
     }
   `;
 
-  const blogPosts = [
-    {
-      id: 1,
-      title: "10 Hidden Gems in Thailand You Must Visit",
-      excerpt: "Discover the lesser-known treasures of Thailand beyond the tourist hotspots. From secret beaches to hidden temples, explore the authentic side of this beautiful country.",
-      image: "https://images.unsplash.com/flagged/photo-1575834678162-9fd77151f40b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aGFpbGFuZCUyMGJlYWNoJTIwdHJvcGljYWx8ZW58MXx8fHwxNzYxNzg3MDEzfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      category: "Destination Guide",
-      date: "Oct 25, 2025",
-      readTime: "5 min read",
-      author: "Rohan Mehta",
-    },
-    {
-      id: 2,
-      title: "Ultimate Maldives Travel Guide 2025",
-      excerpt: "Everything you need to know for your perfect Maldives vacation. Best islands, top resorts, water activities, and insider tips from our travel experts.",
-      image: "https://images.unsplash.com/photo-1637576308588-6647bf80944d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWxkaXZlcyUyMG92ZXJ3YXRlciUyMGJ1bmdhbG93fGVufDF8fHx8MTc2MTc5MzMwMHww&ixlib=rb-4.1.0&q=80&w=1080",
-      category: "Travel Tips",
-      date: "Oct 20, 2025",
-      readTime: "8 min read",
-      author: "Priya Sharma",
-    },
-    {
-      id: 3,
-      title: "Dubai on a Budget: How to Experience Luxury for Less",
-      excerpt: "Think Dubai is only for the wealthy? Think again! Learn how to experience the best of Dubai without breaking the bank with our budget-friendly guide.",
-      image: "https://images.unsplash.com/photo-1643904736472-8b77e93ca3d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkdWJhaSUyMHNreWxpbmUlMjBidXJqJTIwa2hhbGlmYXxlbnwxfHx8fDE3NjE4MDUyMzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      category: "Budget Travel",
-      date: "Oct 15, 2025",
-      readTime: "6 min read",
-      author: "Amit Kumar",
-    },
-    {
-      id: 4,
-      title: "Bali's Best Beaches: A Complete Guide",
-      excerpt: "From surf spots to sunset views, discover Bali's most stunning beaches. Whether you seek adventure or relaxation, we've got the perfect beach for you.",
-      image: "https://images.unsplash.com/photo-1656247203824-3d6f99461ba4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYWxpJTIwcmljZSUyMHRlcnJhY2VzfGVufDF8fHx8MTc2MTc2OTMyNnww&ixlib=rb-4.1.0&q=80&w=1080",
-      category: "Destination Guide",
-      date: "Oct 10, 2025",
-      readTime: "7 min read",
-      author: "Priya Sharma",
-    },
-    {
-      id: 5,
-      title: "Vietnam Visa Guide for Indian Travelers",
-      excerpt: "Complete visa information, requirements, and application process for Indian citizens traveling to Vietnam. Make your visa process hassle-free!",
-      image: "https://images.unsplash.com/photo-1703555853329-b9fab31e92ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aWV0bmFtJTIwaGFsb25nJTIwYmF5fGVufDF8fHx8MTc2MTgyMDk4OHww&ixlib=rb-4.1.0&q=80&w=1080",
-      category: "Travel Tips",
-      date: "Oct 5, 2025",
-      readTime: "4 min read",
-      author: "Rohan Mehta",
-    },
-    {
-      id: 6,
-      title: "Best Time to Visit Thailand: Season-by-Season Guide",
-      excerpt: "Planning your Thailand trip? Learn about the best times to visit different regions, weather patterns, festivals, and how to avoid crowds.",
-      image: "https://images.unsplash.com/flagged/photo-1575834678162-9fd77151f40b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aGFpbGFuZCUyMGJlYWNoJTIwdHJvcGljYWx8ZW58MXx8fHwxNzYxNzg3MDEzfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      category: "Travel Planning",
-      date: "Sep 30, 2025",
-      readTime: "6 min read",
-      author: "Amit Kumar",
-    },
-    {
-      id: 7,
-      title: "Honeymoon in Maldives: The Ultimate Romantic Guide",
-      excerpt: "Planning your dream honeymoon? Discover the most romantic resorts, activities, and experiences that will make your Maldives honeymoon unforgettable.",
-      image: "https://images.unsplash.com/photo-1617153374846-6ebdc6369941?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWFjaCUyMHN1bnNldCUyMGNvdXBsZXxlbnwxfHx8fDE3NjE4MTMyMzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      category: "Honeymoon",
-      date: "Sep 25, 2025",
-      readTime: "9 min read",
-      author: "Priya Sharma",
-    },
-    {
-      id: 8,
-      title: "Travel Insurance: Why You Need It and What to Look For",
-      excerpt: "Don't travel without insurance! Learn why travel insurance is essential and what coverage you need for international trips.",
-      image: "https://images.unsplash.com/photo-1722409195473-d322e99621e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjByZXNvcnQlMjBwb29sfGVufDF8fHx8MTc2MTc0MzI5NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      category: "Travel Tips",
-      date: "Sep 20, 2025",
-      readTime: "5 min read",
-      author: "Rohan Mehta",
-    },
-    {
-      id: 9,
-      title: "Packing List for Southeast Asia: What to Bring",
-      excerpt: "The ultimate packing guide for your Southeast Asia adventure. Essential items, what to leave behind, and pro tips from seasoned travelers.",
-      image: "https://images.unsplash.com/photo-1709572366321-524da39b27e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmF2ZWwlMjBhZHZlbnR1cmUlMjBoYXBweSUyMHRvdXJpc3RzfGVufDF8fHx8MTc2MTgyMDk4OHww&ixlib=rb-4.1.0&q=80&w=1080",
-      category: "Travel Planning",
-      date: "Sep 15, 2025",
-      readTime: "7 min read",
-      author: "Amit Kumar",
-    },
-  ];
-
-  const categories = [
-    "All",
-    "Destination Guide",
-    "Travel Tips",
-    "Budget Travel",
-    "Travel Planning",
-    "Honeymoon",
-  ];
+  const blogPosts = DetailsData.blogPosts;
+  const categories = DetailsData.blogCategories;
 
   return (
     <div className="min-h-screen bg-gray-50">

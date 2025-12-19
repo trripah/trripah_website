@@ -11,6 +11,7 @@ import { FaWhatsapp } from "react-icons/fa6";
 import { toast } from "sonner@2.0.3";
 import HomeImage from '../assets/bg.png';
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import DetailsData from '../DetailsData.json';
 
 export function Contact() {
   const navigate = useNavigate();
@@ -37,36 +38,13 @@ export function Contact() {
     setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
   };
 
-  const contactInfo = [
-    {
-      icon: Phone,
-      title: "Phone",
-      details: ["+91 7676 355 255", "+91 8310 214 579"],
-      action: "Call us",
-      link: "tel:+91767355255",
-    },
-    {
-      icon: Mail,
-      title: "Email",
-      details: ["trripah@gmail.com", "contact@trripah.com"],
-      action: "Send email",
-      link: "mailto:trripah@gmail.com",
-    },
-    {
-      icon: MapPin,
-      title: "Office",
-      details: ["Tejas Arcade, 527/B, Dr Rajkumar Rd, A Block, Milk Colony, 2nd Stage, Rajajinagar, Bengaluru, Karnataka 560010"],
-      action: "Get directions",
-      link: "#",
-    },
-    {
-      icon: Clock,
-      title: "Working Hours",
-      details: ["Mon - Sat: 9:00 AM - 7:00 PM", "Sun: 10:00 AM - 6:00 PM"],
-      action: null,
-      link: null,
-    },
-  ];
+  const contactInfoData = DetailsData.contactInfo;
+  const contactInfo = contactInfoData.map(info => ({
+    ...info,
+    icon: info.title === "Phone" ? Phone :
+          info.title === "Email" ? Mail :
+          info.title === "Office" ? MapPin : Clock,
+  }));
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -174,13 +152,9 @@ export function Contact() {
                         <SelectValue placeholder="Select a subject" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="general">General Inquiry</SelectItem>
-                        <SelectItem value="booking">Booking Assistance</SelectItem>
-                        <SelectItem value="package">Package Information</SelectItem>
-                        <SelectItem value="custom">Custom Trip Request</SelectItem>
-                        <SelectItem value="support">Customer Support</SelectItem>
-                        <SelectItem value="feedback">Feedback</SelectItem>
-                        <SelectItem value="partnership">Partnership Opportunity</SelectItem>
+                        {DetailsData.contactSubjects.map(subject => (
+                          <SelectItem key={subject.value} value={subject.value}>{subject.label}</SelectItem>
+                        ))}
                       </SelectContent>
                     </Select>
                   </div>

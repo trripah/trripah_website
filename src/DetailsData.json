@@ -1,0 +1,551 @@
+
+{
+  "internationalDestinations": [
+    {
+      "id": "thailand",
+      "name": "Thailand",
+      "image": "https://images.unsplash.com/flagged/photo-1575834678162-9fd77151f40b?q=80&w=1080",
+      "description": "Tropical paradise",
+      "startingPrice": "15,000",
+      "discount": "18% OFF"
+    },
+    {
+      "id": "bali",
+      "name": "Bali",
+      "image": "https://images.unsplash.com/photo-1656247203824-3d6f99461ba4?q=80&w=1080",
+      "description": "Spiritual retreats",
+      "startingPrice": "22,999",
+      "discount": "16% OFF"
+    },
+    {
+      "id": "vietnam",
+      "name": "Vietnam",
+      "image": "https://images.unsplash.com/photo-1703555853329-b9fab31e92ad?q=80&w=1080",
+      "description": "Rich history",
+      "startingPrice": "19,999",
+      "discount": "20% OFF"
+    },
+    {
+      "id": "dubai",
+      "name": "Dubai",
+      "image": "https://images.unsplash.com/photo-1643904736472-8b77e93ca3d7?q=80&w=1080",
+      "description": "Modern marvels",
+      "startingPrice": "24,999",
+      "discount": "22% OFF"
+    },
+    {
+      "id": "singapore",
+      "name": "Singapore",
+      "image": "https://images.unsplash.com/photo-1637576308588-6647bf80944d?q=80&w=1080",
+      "description": "Luxury island getaway",
+      "startingPrice": "35,999",
+      "discount": "30% OFF"
+    }
+  ],
+  "indiaDestinations": [
+    {
+      "id": "tamilnadu",
+      "name": "Tamil Nadu",
+      "description": "Temples & culture",
+      "startingPrice": "9,999",
+      "discount": "20% OFF"
+    },
+    {
+      "id": "goa",
+      "name": "Goa",
+      "description": "Beaches & culture",
+      "startingPrice": "8,999",
+      "discount": "15% OFF"
+    },
+    {
+      "id": "kerala",
+      "name": "Kerala",
+      "description": "Backwaters paradise",
+      "startingPrice": "10,999",
+      "discount": "25% OFF"
+    },
+    {
+      "id": "rajasthan",
+      "name": "Rajasthan",
+      "description": "Palaces & deserts",
+      "startingPrice": "12,999",
+      "discount": "10% OFF"
+    },
+    {
+      "id": "north-east",
+      "name": "North-East India",
+      "description": "Mountains & culture",
+      "startingPrice": "14,999",
+      "discount": "12% OFF"
+    }
+  ],
+  "destinations": [
+    {
+      "id": "thailand",
+      "name": "Thailand",
+      "image": "https://images.unsplash.com/flagged/photo-1575834678162-9fd77151f40b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aGFpbGFuZCUyMGJlYWNoJTIwdHJvcGljYWx8ZW58MXx8fHwxNzYxNzg3MDEzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Tropical paradise with stunning beaches and vibrant culture",
+      "packageCount": 12,
+      "startingPrice": "18,999",
+      "type": "Beach & Culture"
+    },
+    {
+      "id": "maldives",
+      "name": "Maldives",
+      "image": "https://images.unsplash.com/photo-1637576308588-6647bf80944d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWxkaXZlcyUyMG92ZXJ3YXRlciUyMGJ1bmdhbG93fGVufDF8fHx8MTc2MTc5MzMwMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Luxury island getaway with crystal-clear waters",
+      "packageCount": 8,
+      "startingPrice": "35,999",
+      "type": "Luxury Beach"
+    },
+    {
+      "id": "dubai",
+      "name": "Dubai",
+      "image": "https://images.unsplash.com/photo-1643904736472-8b77e93ca3d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkdWJhaSUyMHNreWxpbmUlMjBidXJqJTIwa2hhbGlmYXxlbnwxfHx8fDE3NjE4MDUyMzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Modern marvels and desert adventures",
+      "packageCount": 10,
+      "startingPrice": "24,999",
+      "type": "Urban Adventure"
+    },
+    {
+      "id": "bali",
+      "name": "Bali",
+      "image": "https://images.unsplash.com/photo-1656247203824-3d6f99461ba4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYWxpJTIwcmljZSUyMHRlcnJhY2VzfGVufDF8fHx8MTc2MTc2OTMyNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Spiritual retreats and lush landscapes",
+      "packageCount": 9,
+      "startingPrice": "22,999",
+      "type": "Culture & Nature"
+    },
+    {
+      "id": "vietnam",
+      "name": "Vietnam",
+      "image": "https://images.unsplash.com/photo-1703555853329-b9fab31e92ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aWV0bmFtJTIwaGFsb25nJTIwYmF5fGVufDF8fHx8MTc2MTgyMDk4OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Rich history and breathtaking natural wonders",
+      "packageCount": 7,
+      "startingPrice": "19,999",
+      "type": "Adventure"
+    }
+  ],
+  "packages": [
+    {
+      "id": "romantic-maldives",
+      "title": "Romantic Maldives Getaway",
+      "destination": "Maldives",
+      "image": "https://images.unsplash.com/photo-1637576308588-6647bf80944d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWxkaXZlcyUyMG92ZXJ3YXRlciUyMGJ1bmdhbG93fGVufDF8fHx8MTc2MTc5MzMwMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "duration": "4N/5D",
+      "groupSize": "2 People",
+      "price": "35,999",
+      "highlights": [
+        "Overwater villa stay",
+        "Romantic candlelight dinner",
+        "Snorkeling & water sports"
+      ],
+      "category": "Honeymoon",
+      "discount": "28% OFF"
+    },
+    {
+      "id": "thailand-adventure",
+      "title": "Thailand Island Hopping",
+      "destination": "Thailand",
+      "image": "https://images.unsplash.com/flagged/photo-1575834678162-9fd77151f40b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aGFpbGFuZCUyMGJlYWNoJTIwdHJvcGljYWx8ZW58MXx8fHwxNzYxNzg3MDEzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "duration": "6N/7D",
+      "groupSize": "4-6 People",
+      "price": "18,999",
+      "highlights": [
+        "Phi Phi Islands tour",
+        "Bangkok city exploration",
+        "Beach resort stay"
+      ],
+      "category": "Adventure",
+      "discount": "25% OFF"
+    },
+    {
+      "id": "dubai-luxury",
+      "title": "Dubai Luxury Experience",
+      "destination": "Dubai",
+      "image": "https://images.unsplash.com/photo-1643904736472-8b77e93ca3d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkdWJhaSUyMHNreWxpbmUlMjBidXJqJTIwa2hhbGlmYXxlbnwxfHx8fDE3NjE4MDUyMzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "duration": "5N/6D",
+      "groupSize": "2-4 People",
+      "price": "24,999",
+      "highlights": [
+        "Burj Khalifa visit",
+        "Desert safari with BBQ",
+        "Luxury hotel accommodation"
+      ],
+      "category": "Luxury",
+      "discount": "24% OFF"
+    },
+    {
+      "id": "bali-spiritual",
+      "title": "Bali Spiritual Retreat",
+      "destination": "Bali",
+      "image": "https://images.unsplash.com/photo-1656247203824-3d6f99461ba4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYWxpJTIwcmljZSUyMHRlcnJhY2VzfGVufDF8fHx8MTc2MTc2OTMyNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "duration": "7N/8D",
+      "groupSize": "2-4 People",
+      "price": "22,999",
+      "highlights": [
+        "Ubud rice terraces",
+        "Temple visits",
+        "Yoga and meditation sessions"
+      ],
+      "category": "Wellness",
+      "discount": "18% OFF"
+    },
+    {
+      "id": "vietnam-culture",
+      "title": "Vietnam Cultural Explorer",
+      "destination": "Vietnam",
+      "image": "https://images.unsplash.com/photo-1703555853329-b9fab31e92ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aWV0bmFtJTIwaGFsb25nJTIwYmF5fGVufDF8fHx8MTc2MTgyMDk4OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "duration": "5N/6D",
+      "groupSize": "2-6 People",
+      "price": "19,999",
+      "highlights": [
+        "Halong Bay cruise",
+        "Hanoi Old Quarter tour",
+        "Vietnamese cooking class"
+      ],
+      "category": "Culture",
+      "discount": "20% OFF"
+    },
+    {
+      "id": "thailand-family",
+      "title": "Thailand Family Fun Package",
+      "destination": "Thailand",
+      "image": "https://images.unsplash.com/flagged/photo-1575834678162-9fd77151f40b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aGFpbGFuZCUyMGJlYWNoJTIwdHJvcGljYWx8ZW58MXx8fHwxNzYxNzg3MDEzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "duration": "6N/7D",
+      "groupSize": "4-6 People",
+      "price": "21,999",
+      "highlights": [
+        "Safari World Bangkok",
+        "Elephant sanctuary visit",
+        "Beach activities for kids"
+      ],
+      "category": "Family",
+      "discount": "22% OFF"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Priya & Rahul",
+      "location": "Mumbai, India",
+      "rating": 5,
+      "comment": "trripah made our honeymoon in Maldives absolutely magical! Every detail was perfect.",
+      "tripDestination": "Maldives",
+      "image": "https://images.unsplash.com/photo-1617153374846-6ebdc6369941?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWFjaCUyMHN1bnNldCUyMGNvdXBsZXxlbnwxfHx8fDE3NjE4MTMyMzl8MA&ixlib=rb-4.1.0&q=80&w=1080"
+    },
+    {
+      "name": "Amit Kumar",
+      "location": "Delhi, India",
+      "rating": 5,
+      "comment": "Best Thailand trip ever! The itinerary was well-planned and the support team was amazing.",
+      "tripDestination": "Thailand",
+      "image": "https://images.unsplash.com/photo-1709572366321-524da39b27e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmF2ZWwlMjBhZHZlbnR1cmUlMjBoYXBweSUyMHRvdXJpc3RzfGVufDF8fHx8MTc2MTgyMDk4OHww&ixlib=rb-4.1.0&q=80&w=1080"
+    },
+    {
+      "name": "Sneha Patel",
+      "location": "Bangalore, India",
+      "rating": 5,
+      "comment": "Dubai was a dream come true! Everything from flights to hotels was seamless.",
+      "tripDestination": "Dubai",
+      "image": "https://images.unsplash.com/photo-1722409195473-d322e99621e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjByZXNvcnQlMjBwb29sfGVufDF8fHx8MTc2MTc0MzI5NXww&ixlib=rb-4.1.0&q=80&w=1080"
+    }
+  ],
+  "reviews": [
+    {
+      "name": "Priya & Rahul Sharma",
+      "location": "Mumbai, India",
+      "rating": 5,
+      "comment": "trripah made our honeymoon in Maldives absolutely magical! Every detail was perfect, from the overwater villa to the romantic dinners. The team was responsive and helpful throughout our trip. Highly recommended!",
+      "tripDestination": "Maldives",
+      "image": "https://images.unsplash.com/photo-1617153374846-6ebdc6369941?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWFjaCUyMHN1bnNldCUyMGNvdXBsZXxlbnwxfHx8fDE3NjE4MTMyMzl8MA&ixlib=rb-4.1.0&q=80&w=1080"
+    },
+    {
+      "name": "Amit Kumar",
+      "location": "Delhi, India",
+      "rating": 5,
+      "comment": "Best Thailand trip ever! The itinerary was well-planned with a perfect mix of adventure and relaxation. Our guide was knowledgeable and the accommodations exceeded expectations. Worth every penny!",
+      "tripDestination": "Thailand",
+      "image": "https://images.unsplash.com/photo-1709572366321-524da39b27e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmF2ZWwlMjBhZHZlbnR1cmUlMjBoYXBweSUyMHRvdXJpc3RzfGVufDF8fHx8MTc2MTgyMDk4OHww&ixlib=rb-4.1.0&q=80&w=1080"
+    },
+    {
+      "name": "Sneha Patel",
+      "location": "Bangalore, India",
+      "rating": 5,
+      "comment": "Dubai was a dream come true! Everything from flights to hotels was seamless. The desert safari and Burj Khalifa visit were highlights. trripah's customer service is top-notch!",
+      "tripDestination": "Dubai",
+      "image": "https://images.unsplash.com/photo-1722409195473-d322e99621e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjByZXNvcnQlMjBwb29sfGVufDF8fHx8MTc2MTc0MzI5NXww&ixlib=rb-4.1.0&q=80&w=1080"
+    },
+    {
+      "name": "Vikram & Family",
+      "location": "Pune, India",
+      "rating": 5,
+      "comment": "Amazing family vacation to Bali! The kids loved the water parks and we enjoyed the cultural tours. trripah accommodated all our special requests. Excellent service!",
+      "tripDestination": "Bali",
+      "image": "https://images.unsplash.com/photo-1656247203824-3d6f99461ba4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYWxpJTIwcmljZSUyMHRlcnJhY2VzfGVufDF8fHx8MTc2MTc2OTMyNnww&ixlib=rb-4.1.0&q=80&w=1080"
+    },
+    {
+      "name": "Neha Reddy",
+      "location": "Hyderabad, India",
+      "rating": 4,
+      "comment": "Wonderful Vietnam tour! Ha Long Bay cruise was breathtaking and Hanoi streets were vibrant. Only minor hiccup was a delayed transfer, but support team handled it quickly.",
+      "tripDestination": "Vietnam",
+      "image": "https://images.unsplash.com/photo-1703555853329-b9fab31e92ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aWV0bmFtJTIwaGFsb25nJTIwYmF5fGVufDF8fHx8MTc2MTgyMDk4OHww&ixlib=rb-4.1.0&q=80&w=1080"
+    },
+    {
+      "name": "Karan & Divya",
+      "location": "Ahmedabad, India",
+      "rating": 5,
+      "comment": "Perfect anniversary trip to Maldives! The resort was stunning and activities were well-organized. trripah surprised us with complimentary spa treatment. Unforgettable experience!",
+      "tripDestination": "Maldives",
+      "image": "https://images.unsplash.com/photo-1637576308588-6647bf80944d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWxkaXZlcyUyMG92ZXJ3YXRlciUyMGJ1bmdhbG93fGVufDF8fHx8MTc2MTc5MzMwMHww&ixlib=rb-4.1.0&q=80&w=1080"
+    },
+    {
+      "name": "Rajesh Gupta",
+      "location": "Kolkata, India",
+      "rating": 5,
+      "comment": "Solo trip to Thailand was amazing! trripah arranged everything perfectly. Met other travelers, explored islands, and made great memories. Felt safe throughout the journey.",
+      "tripDestination": "Thailand",
+      "image": "https://images.unsplash.com/flagged/photo-1575834678162-9fd77151f40b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aGFpbGFuZCUyMGJlYWNoJTIwdHJvcGljYWx8ZW58MXx8fHwxNzYxNzg3MDEzfDA&ixlib=rb-4.1.0&q=80&w=1080"
+    },
+    {
+      "name": "Ananya Singh",
+      "location": "Chennai, India",
+      "rating": 5,
+      "comment": "Luxury Dubai package exceeded all expectations! From the 5-star hotel to private tours, everything was world-class. trripah's attention to detail is remarkable.",
+      "tripDestination": "Dubai",
+      "image": "https://images.unsplash.com/photo-1643904736472-8b77e93ca3d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkdWJhaSUyMHNreWxpbmUlMjBidXJqJTIwa2hhbGlmYXxlbnwxfHx8fDE3NjE4MDUyMzB8MA&ixlib=rb-4.1.0&q=80&w=1080"
+    },
+    {
+      "name": "Aditya Malhotra",
+      "location": "Jaipur, India",
+      "rating": 4,
+      "comment": "Great Bali experience! Beautiful beaches, temples, and rice terraces. Food was delicious. Would have loved one more day in Ubud but overall fantastic trip!",
+      "tripDestination": "Bali",
+      "image": "https://images.unsplash.com/photo-1656247203824-3d6f99461ba4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYWxpJTIwcmljZSUyMHRlcnJhY2VzfGVufDF8fHx8MTc2MTc2OTMyNnww&ixlib=rb-4.1.0&q=80&w=1080"
+    }
+  ],
+  "blogPosts": [
+    {
+      "id": 1,
+      "title": "10 Hidden Gems in Thailand You Must Visit",
+      "excerpt": "Discover the lesser-known treasures of Thailand beyond the tourist hotspots. From secret beaches to hidden temples, explore the authentic side of this beautiful country.",
+      "image": "https://images.unsplash.com/flagged/photo-1575834678162-9fd77151f40b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aGFpbGFuZCUyMGJlYWNoJTIwdHJvcGljYWx8ZW58MXx8fHwxNzYxNzg3MDEzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "category": "Destination Guide",
+      "date": "Oct 25, 2025",
+      "readTime": "5 min read",
+      "author": "Rohan Mehta"
+    },
+    {
+      "id": 2,
+      "title": "Ultimate Maldives Travel Guide 2025",
+      "excerpt": "Everything you need to know for your perfect Maldives vacation. Best islands, top resorts, water activities, and insider tips from our travel experts.",
+      "image": "https://images.unsplash.com/photo-1637576308588-6647bf80944d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWxkaXZlcyUyMG92ZXJ3YXRlciUyMGJ1bmdhbG93fGVufDF8fHx8MTc2MTc5MzMwMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "category": "Travel Tips",
+      "date": "Oct 20, 2025",
+      "readTime": "8 min read",
+      "author": "Priya Sharma"
+    },
+    {
+      "id": 3,
+      "title": "Dubai on a Budget: How to Experience Luxury for Less",
+      "excerpt": "Think Dubai is only for the wealthy? Think again! Learn how to experience the best of Dubai without breaking the bank with our budget-friendly guide.",
+      "image": "https://images.unsplash.com/photo-1643904736472-8b77e93ca3d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkdWJhaSUyMHNreWxpbmUlMjBidXJqJTIwa2hhbGlmYXxlbnwxfHx8fDE3NjE4MDUyMzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "category": "Budget Travel",
+      "date": "Oct 15, 2025",
+      "readTime": "6 min read",
+      "author": "Amit Kumar"
+    },
+    {
+      "id": 4,
+      "title": "Bali's Best Beaches: A Complete Guide",
+      "excerpt": "From surf spots to sunset views, discover Bali's most stunning beaches. Whether you seek adventure or relaxation, we've got the perfect beach for you.",
+      "image": "https://images.unsplash.com/photo-1656247203824-3d6f99461ba4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYWxpJTIwcmljZSUyMHRlcnJhY2VzfGVufDF8fHx8MTc2MTc2OTMyNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "category": "Destination Guide",
+      "date": "Oct 10, 2025",
+      "readTime": "7 min read",
+      "author": "Priya Sharma"
+    },
+    {
+      "id": 5,
+      "title": "Vietnam Visa Guide for Indian Travelers",
+      "excerpt": "Complete visa information, requirements, and application process for Indian citizens traveling to Vietnam. Make your visa process hassle-free!",
+      "image": "https://images.unsplash.com/photo-1703555853329-b9fab31e92ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aWV0bmFtJTIwaGFsb25nJTIwYmF5fGVufDF8fHx8MTc2MTgyMDk4OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "category": "Travel Tips",
+      "date": "Oct 5, 2025",
+      "readTime": "4 min read",
+      "author": "Rohan Mehta"
+    },
+    {
+      "id": 6,
+      "title": "Best Time to Visit Thailand: Season-by-Season Guide",
+      "excerpt": "Planning your Thailand trip? Learn about the best times to visit different regions, weather patterns, festivals, and how to avoid crowds.",
+      "image": "https://images.unsplash.com/flagged/photo-1575834678162-9fd77151f40b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aGFpbGFuZCUyMGJlYWNoJTIwdHJvcGljYWx8ZW58MXx8fHwxNzYxNzg3MDEzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "category": "Travel Planning",
+      "date": "Sep 30, 2025",
+      "readTime": "6 min read",
+      "author": "Amit Kumar"
+    },
+    {
+      "id": 7,
+      "title": "Honeymoon in Maldives: The Ultimate Romantic Guide",
+      "excerpt": "Planning your dream honeymoon? Discover the most romantic resorts, activities, and experiences that will make your Maldives honeymoon unforgettable.",
+      "image": "https://images.unsplash.com/photo-1617153374846-6ebdc6369941?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWFjaCUyMHN1bnNldCUyMGNvdXBsZXxlbnwxfHx8fDE3NjE4MTMyMzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "category": "Honeymoon",
+      "date": "Sep 25, 2025",
+      "readTime": "9 min read",
+      "author": "Priya Sharma"
+    },
+    {
+      "id": 8,
+      "title": "Travel Insurance: Why You Need It and What to Look For",
+      "excerpt": "Don't travel without insurance! Learn why travel insurance is essential and what coverage you need for international trips.",
+      "image": "https://images.unsplash.com/photo-1722409195473-d322e99621e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjByZXNvcnQlMjBwb29sfGVufDF8fHx8MTc2MTc0MzI5NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "category": "Travel Tips",
+      "date": "Sep 20, 2025",
+      "readTime": "5 min read",
+      "author": "Rohan Mehta"
+    },
+    {
+      "id": 9,
+      "title": "Packing List for Southeast Asia: What to Bring",
+      "excerpt": "The ultimate packing guide for your Southeast Asia adventure. Essential items, what to leave behind, and pro tips from seasoned travelers.",
+      "image": "https://images.unsplash.com/photo-1709572366321-524da39b27e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmF2ZWwlMjBhZHZlbnR1cmUlMjBoYXBweSUyMHRvdXJpc3RzfGVufDF8fHx8MTc2MTgyMDk4OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "category": "Travel Planning",
+      "date": "Sep 15, 2025",
+      "readTime": "7 min read",
+      "author": "Amit Kumar"
+    }
+  ],
+  "aboutValues": [
+    {
+      "title": "Passion for Travel",
+      "description": "We live and breathe travel. Every journey we create is infused with our love for exploration."
+    },
+    {
+      "title": "Safety & Trust",
+      "description": "Your safety is our priority. We partner with verified hotels and trusted service providers."
+    },
+    {
+      "title": "Excellence in Service",
+      "description": "From planning to execution, we maintain the highest standards of service quality."
+    },
+    {
+      "title": "Customer First",
+      "description": "Your satisfaction drives us. We go the extra mile to exceed your expectations."
+    }
+  ],
+  "aboutStats": [
+    { "number": "10,000+", "label": "Happy Travelers" },
+    { "number": "50+", "label": "Destinations" },
+    { "number": "4.9/5", "label": "Average Rating" },
+    { "number": "24/7", "label": "Support Available" }
+  ],
+  "teamMembers": [
+    {
+      "name": "Rohan Mehta",
+      "role": "Founder & CEO",
+      "image": "https://images.unsplash.com/photo-1709572366321-524da39b27e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmF2ZWwlMjBhZHZlbnR1cmUlMjBoYXBweSUyMHRvdXJpc3RzfGVufDF8fHx8MTc2MTgyMDk4OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "bio": "10+ years in travel industry. Passionate about creating memorable experiences."
+    },
+    {
+      "name": "Priya Sharma",
+      "role": "Head of Operations",
+      "image": "https://images.unsplash.com/photo-1617153374846-6ebdc6369941?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWFjaCUyMHN1bnNldCUyMGNvdXBsZXxlbnwxfHx8fDE3NjE4MTMyMzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "bio": "Expert in logistics and customer service. Ensures smooth travel experiences."
+    },
+    {
+      "name": "Amit Kumar",
+      "role": "Travel Consultant",
+      "image": "https://images.unsplash.com/photo-1722409195473-d322e99621e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjByZXNvcnQlMjBwb29sfGVufDF8fHx8MTc2MTc0MzI5NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "bio": "Specializes in Southeast Asia. Visited 30+ countries and counting!"
+    }
+  ],
+  "partners": [
+    "MakeMyTrip",
+    "Booking.com",
+    "Airbnb",
+    "Thomas Cook",
+    "Agoda",
+    "Expedia"
+  ],
+  "ratingBreakdown": [
+    { "stars": 5, "count": 142, "percentage": 91 },
+    { "stars": 4, "count": 12, "percentage": 8 },
+    { "stars": 3, "count": 2, "percentage": 1 },
+    { "stars": 2, "count": 0, "percentage": 0 },
+    { "stars": 1, "count": 0, "percentage": 0 }
+  ],
+  "reviewStats": {
+    "totalReviews": 156,
+    "averageRating": 4.9
+  },
+  "contactInfo": [
+    {
+      "title": "Phone",
+      "details": ["+91 7676 355 255", "+91 8310 214 579"],
+      "action": "Call us",
+      "link": "tel:+91767355255"
+    },
+    {
+      "title": "Email",
+      "details": ["trripah@gmail.com", "contact@trripah.com"],
+      "action": "Send email",
+      "link": "mailto:trripah@gmail.com"
+    },
+    {
+      "title": "Office",
+      "details": ["Tejas Arcade, 527/B, Dr Rajkumar Rd, A Block, Milk Colony, 2nd Stage, Rajajinagar, Bengaluru, Karnataka 560010"],
+      "action": "Get directions",
+      "link": "#"
+    },
+    {
+      "title": "Working Hours",
+      "details": ["Mon - Sat: 9:00 AM - 7:00 PM", "Sun: 10:00 AM - 6:00 PM"],
+      "action": null,
+      "link": null
+    }
+  ],
+  "contactSubjects": [
+    { "value": "general", "label": "General Inquiry" },
+    { "value": "booking", "label": "Booking Assistance" },
+    { "value": "package", "label": "Package Information" },
+    { "value": "custom", "label": "Custom Trip Request" },
+    { "value": "support", "label": "Customer Support" },
+    { "value": "feedback", "label": "Feedback" },
+    { "value": "partnership", "label": "Partnership Opportunity" }
+  ],
+  "interests": [
+    "Adventure Sports",
+    "Beach & Relaxation",
+    "Cultural Exploration",
+    "Food & Cuisine",
+    "Wildlife & Nature",
+    "Photography",
+    "Wellness & Spa",
+    "Shopping",
+    "Nightlife",
+    "Historical Sites"
+  ],
+  "blogCategories": [
+    "All",
+    "Destination Guide",
+    "Travel Tips",
+    "Budget Travel",
+    "Travel Planning",
+    "Honeymoon"
+  ],
+  "whyTrippah": [
+    {
+      "title": "Curated Trips",
+      "description": "Handpicked destinations and experiences tailored to your preferences"
+    },
+    {
+      "title": "24/7 Expert Support",
+      "description": "Round-the-clock assistance from our travel experts"
+    },
+    {
+      "title": "Hassle-free Bookings",
+      "description": "Simple, secure, and transparent booking process"
+    }
+  ]
+}
