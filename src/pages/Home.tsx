@@ -16,7 +16,7 @@ import NorthEast from '../assets/northEast.jpg'
 import Rajastan from '../assets/rajastan.jpg'
 import India from '../assets/India Flag.svg'
 import World from '../assets/world-map.svg'
-import DetailsData from '../DetailsData.json';
+import DetailsData from '../data/DetailsData.json';
 
 export function Home() {
   const navigate = useNavigate();

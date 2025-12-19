@@ -128,100 +128,99 @@
   ],
   "packages": [
     {
-      "id": "romantic-maldives",
-      "title": "Romantic Maldives Getaway",
+      "id": "luxury-maldives-escape",
+      "title": "Luxury Maldives Escape",
       "destination": "Maldives",
       "image": "https://images.unsplash.com/photo-1637576308588-6647bf80944d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWxkaXZlcyUyMG92ZXJ3YXRlciUyMGJ1bmdhbG93fGVufDF8fHx8MTc2MTc5MzMwMHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "duration": "4N/5D",
-      "groupSize": "2 People",
-      "price": "35,999",
-      "highlights": [
-        "Overwater villa stay",
-        "Romantic candlelight dinner",
-        "Snorkeling & water sports"
-      ],
-      "category": "Honeymoon",
-      "discount": "28% OFF"
-    },
-    {
-      "id": "thailand-adventure",
-      "title": "Thailand Island Hopping",
-      "destination": "Thailand",
-      "image": "https://images.unsplash.com/flagged/photo-1575834678162-9fd77151f40b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aGFpbGFuZCUyMGJlYWNoJTIwdHJvcGljYWx8ZW58MXx8fHwxNzYxNzg3MDEzfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "duration": "6N/7D",
-      "groupSize": "4-6 People",
-      "price": "18,999",
-      "highlights": [
-        "Phi Phi Islands tour",
-        "Bangkok city exploration",
-        "Beach resort stay"
-      ],
-      "category": "Adventure",
-      "discount": "25% OFF"
-    },
-    {
-      "id": "dubai-luxury",
-      "title": "Dubai Luxury Experience",
-      "destination": "Dubai",
-      "image": "https://images.unsplash.com/photo-1643904736472-8b77e93ca3d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkdWJhaSUyMHNreWxpbmUlMjBidXJqJTIwa2hhbGlmYXxlbnwxfHx8fDE3NjE4MDUyMzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "duration": "5N/6D",
-      "groupSize": "2-4 People",
-      "price": "24,999",
+      "groupSize": "2–4 People",
+      "price": "58,999",
       "highlights": [
-        "Burj Khalifa visit",
-        "Desert safari with BBQ",
-        "Luxury hotel accommodation"
+        "Luxury villa stay",
+        "Premium dining",
+        "Marine experiences"
       ],
       "category": "Luxury",
-      "discount": "24% OFF"
-    },
-    {
-      "id": "bali-spiritual",
-      "title": "Bali Spiritual Retreat",
-      "destination": "Bali",
-      "image": "https://images.unsplash.com/photo-1656247203824-3d6f99461ba4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYWxpJTIwcmljZSUyMHRlcnJhY2VzfGVufDF8fHx8MTc2MTc2OTMyNnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "duration": "7N/8D",
-      "groupSize": "2-4 People",
-      "price": "22,999",
-      "highlights": [
-        "Ubud rice terraces",
-        "Temple visits",
-        "Yoga and meditation sessions"
-      ],
-      "category": "Wellness",
-      "discount": "18% OFF"
-    },
-    {
-      "id": "vietnam-culture",
-      "title": "Vietnam Cultural Explorer",
-      "destination": "Vietnam",
-      "image": "https://images.unsplash.com/photo-1703555853329-b9fab31e92ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aWV0bmFtJTIwaGFsb25nJTIwYmF5fGVufDF8fHx8MTc2MTgyMDk4OHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "duration": "5N/6D",
-      "groupSize": "2-6 People",
-      "price": "19,999",
-      "highlights": [
-        "Halong Bay cruise",
-        "Hanoi Old Quarter tour",
-        "Vietnamese cooking class"
-      ],
-      "category": "Culture",
       "discount": "20% OFF"
     },
     {
-      "id": "thailand-family",
+      "id": "thailand-island-hopping",
+      "title": "Thailand Island Hopping Adventure",
+      "destination": "Thailand",
+            "image": "https://images.unsplash.com/flagged/photo-1575834678162-9fd77151f40b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aGFpbGFuZCUyMGJlYWNoJTIwdHJvcGljYWx8ZW58MXx8fHwxNzYxNzg3MDEzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "duration": "6N/7D",
+      "groupSize": "2–6 People",
+      "price": "42,999",
+      "highlights": [
+        "Phi Phi Islands tour",
+        "Krabi beach exploration",
+        "Snorkeling adventures"
+      ],
+      "category": "Island & Adventure",
+      "discount": "22% OFF"
+    },
+    {
+      "id": "dubai-luxury-experience",
+      "title": "Dubai Ultimate Luxury Experience",
+      "destination": "Dubai",
+      "image": "https://images.unsplash.com/photo-1643904736472-8b77e93ca3d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkdWJhaSUyMHNreWxpbmUlMjBidXJqJTIwa2hhbGlmYXxlbnwxfHx8fDE3NjE4MDUyMzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "duration": "5N/6D",
+      "groupSize": "2–5 People",
+      "price": "49,999",
+      "highlights": [
+        "Burj Khalifa visit",
+        "Desert safari",
+        "Luxury accommodations"
+      ],
+      "category": "Luxury",
+      "discount": "22% OFF"
+    },
+    {
+      "id": "bali-cultural-retreat",
+      "title": "Bali Cultural & Beach Retreat",
+      "destination": "Bali",
+      "image": "https://images.unsplash.com/photo-1656247203824-3d6f99461ba4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYWxpJTIwcmljZSUyMHRlcnJhY2VzfGVufDF8fHx8MTc2MTc2OTMyNnww&ixlib=rb-4.1.0&q=80&w=1080",      "duration": "6N/7D",
+      "groupSize": "2–6 People",
+      "price": "38,999",
+      "highlights": [
+        "Cultural temple tours",
+        "Rice terraces exploration",
+        "Beach relaxation"
+      ],
+      "category": "Leisure",
+      "discount": "22% OFF"
+    },
+    {
+      "id": "vietnam-discovery-tour",
+      "title": "Vietnam Discovery Tour",
+      "destination": "Vietnam",
+       "image": "https://images.unsplash.com/photo-1703555853329-b9fab31e92ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aWV0bmFtJTIwaGFsb25nJTIwYmF5fGVufDF8fHx8MTc2MTgyMDk4OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "duration": "7N/8D",
+      "groupSize": "2–8 People",
+      "price": "41,999",
+      "highlights": [
+        "Halong Bay cruise",
+        "Hanoi heritage sites",
+        "Ho Chi Minh exploration"
+      ],
+      "category": "Cultural",
+      "discount": "22% OFF"
+    },
+    {
+      "id": "thailand-family-fun",
       "title": "Thailand Family Fun Package",
       "destination": "Thailand",
       "image": "https://images.unsplash.com/flagged/photo-1575834678162-9fd77151f40b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aGFpbGFuZCUyMGJlYWNoJTIwdHJvcGljYWx8ZW58MXx8fHwxNzYxNzg3MDEzfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "duration": "6N/7D",
-      "groupSize": "4-6 People",
-      "price": "21,999",
+      "duration": "5N/6D",
+      "groupSize": "3–6 People",
+      "price": "36,999",
       "highlights": [
         "Safari World Bangkok",
-        "Elephant sanctuary visit",
-        "Beach activities for kids"
+        "Family beach activities",
+        "Cultural experiences"
       ],
       "category": "Family",
-      "discount": "22% OFF"
+      "discount": "23% OFF"
     }
   ],
   "testimonials": [

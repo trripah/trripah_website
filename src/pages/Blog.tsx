@@ -7,7 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { Calendar, Clock, ArrowRight, Search } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { useState } from "react";
-import DetailsData from '../DetailsData.json';
+import DetailsData from '../data/DetailsData.json';
 
 export function Blog() {
   const navigate = useNavigate();

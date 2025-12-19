@@ -11,7 +11,7 @@ import { FaWhatsapp } from "react-icons/fa6";
 import { toast } from "sonner@2.0.3";
 import HomeImage from '../assets/bg.png';
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
-import DetailsData from '../DetailsData.json';
+import DetailsData from '../data/DetailsData.json';
 
 export function Contact() {
   const navigate = useNavigate();

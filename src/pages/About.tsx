@@ -3,7 +3,7 @@ import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import { Shield, Heart, Award, Users, MapPin, Globe } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
-import DetailsData from '../DetailsData.json';
+import DetailsData from '../data/DetailsData.json';
 
 export function About() {
   const navigate = useNavigate();

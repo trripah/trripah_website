@@ -12,7 +12,7 @@ import { ArrowLeft, ArrowRight, CheckCircle } from "lucide-react";
 import { toast } from "sonner@2.0.3";
 import { submitTripRequest } from "../utils/ApiHandling";
 import BGimage from "../assets/bg.webp";
-import DetailsData from '../DetailsData.json';
+import DetailsData from '../data/DetailsData.json';
 
 export function CustomTrip() {
   const navigate = useNavigate();

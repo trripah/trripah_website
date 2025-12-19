@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
@@ -7,6 +7,7 @@ import { Badge } from "../components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../components/ui/accordion";
 import { Clock, Users, MapPin, Check, X, Calendar, Phone } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import packageDetailsData from "../data/PackageDetailsData.json";
 
 export function PackageDetail() {
   const { id } = useParams();
@@ -22,74 +23,26 @@ export function PackageDetail() {
     }
   `;
 
-  // Mock package data
-  const packageData = {
-    id: "romantic-maldives",
-    title: "Romantic Maldives Getaway",
-    destination: "Maldives",
-    category: "Honeymoon",
-    duration: "4N/5D",
-    groupSize: "2 People",
-    price: "35,999",
-    originalPrice: "44,999",
-    rating: 4.8,
-    reviews: 156,
-    images: [
-      "https://images.unsplash.com/photo-1637576308588-6647bf80944d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWxkaXZlcyUyMG92ZXJ3YXRlciUyMGJ1bmdhbG93fGVufDF8fHx8MTc2MTc5MzMwMHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "https://images.unsplash.com/photo-1722409195473-d322e99621e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjByZXNvcnQlMjBwb29sfGVufDF8fHx8MTc2MTc0MzI5NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "https://images.unsplash.com/photo-1617153374846-6ebdc6369941?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWFjaCUyMHN1bnNldCUyMGNvdXBsZXxlbnwxfHx8fDE3NjE4MTMyMzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    ],
-    overview: "Experience paradise with your loved one in this all-inclusive Maldives package. Enjoy pristine beaches, luxury overwater villas, and world-class service. This romantic getaway includes everything you need for an unforgettable honeymoon or anniversary celebration.",
-    itinerary: [
-      {
-        day: 1,
-        title: "Arrival & Welcome",
-        description: "Arrive at Male International Airport. Speedboat transfer to resort. Check-in to overwater villa. Welcome cocktails and resort orientation. Evening at leisure.",
-      },
-      {
-        day: 2,
-        title: "Island Adventures",
-        description: "Breakfast at villa. Morning snorkeling session. Lunch at beach restaurant. Afternoon water sports (jet ski, kayaking). Sunset cruise. Romantic beach dinner.",
-      },
-      {
-        day: 3,
-        title: "Relaxation & Spa",
-        description: "Breakfast. Couples spa treatment (90 minutes). Lunch. Free time to explore or relax. Evening entertainment. Candlelight dinner at specialty restaurant.",
-      },
-      {
-        day: 4,
-        title: "Marine Experience",
-        description: "Early breakfast. Scuba diving or dolphin watching tour. Lunch. Beach relaxation. Photography session. Farewell BBQ dinner.",
-      },
-      {
-        day: 5,
-        title: "Departure",
-        description: "Breakfast. Check-out. Speedboat transfer to airport. Depart with beautiful memories.",
-      },
-    ],
-    inclusions: [
-      "4 nights in overwater villa",
-      "Daily breakfast, lunch, and dinner",
-      "Speedboat transfers",
-      "Welcome drinks and amenities",
-      "Snorkeling equipment",
-      "Water sports (non-motorized)",
-      "Romantic beach dinner",
-      "Couples spa treatment",
-      "Sunset cruise",
-      "All taxes and service charges",
-    ],
-    exclusions: [
-      "International flights",
-      "Visa fees",
-      "Travel insurance",
-      "Alcoholic beverages",
-      "Scuba diving (additional cost)",
-      "Motorized water sports",
-      "Personal expenses",
-      "Tips and gratuities",
-    ],
-  };
+  const packageData = useMemo(() => {
+    return packageDetailsData.find(pkg => pkg.id === id);
+  }, [id]);
+
+  if (!packageData) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold mb-4">Package Not Found</h1>
+          <p className="text-gray-600 mb-6">The package you're looking for doesn't exist.</p>
+          <Button
+            onClick={() => navigate("/packages")}
+            className="bg-[#FF7B00] hover:bg-[#FF7B00]/90"
+          >
+            Back to Packages
+          </Button>
+        </div>
+      </div>
+    );
+  }
 
   const faqs = [
     {

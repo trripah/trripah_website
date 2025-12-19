@@ -5,7 +5,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { Button } from "../components/ui/button";
 import HomeImage from '../assets/bg.png';
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
-import DetailsData from '../DetailsData.json';
+import DetailsData from '../data/DetailsData.json';
 
 export function Destinations() {
   const navigate = useNavigate();

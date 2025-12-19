@@ -4,7 +4,7 @@ import { Card, CardContent } from "../components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
 import { Progress } from "../components/ui/progress";
 import { Star } from "lucide-react";
-import DetailsData from '../DetailsData.json';
+import DetailsData from '../data/DetailsData.json';
 
 export function Reviews() {
   const [filterRating, setFilterRating] = useState("all");
