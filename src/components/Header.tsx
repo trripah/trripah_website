@@ -82,7 +82,7 @@ export function Header() {
         </div>
 
         {/* Mobile Menu */}
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
+        {/* <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="lg:hidden">
             <Button variant="ghost" size="icon" style={{ cursor: 'pointer' }}>
               {isOpen ? <X style={{color:'#fff' , width:'25px', height:'25px'}} /> : <Menu style={{color:'#fff' , width:'25px', height:'25px'}}/>}
@@ -115,7 +115,7 @@ export function Header() {
               </Button>
             </nav>
           </SheetContent>
-        </Sheet>
+        </Sheet> */}
       </div>
       <style>{`
         header {
