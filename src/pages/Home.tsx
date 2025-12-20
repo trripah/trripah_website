@@ -324,7 +324,7 @@ export function Home() {
       </section>
 
       {/* Blog Highlights */}
-      <section style={styles.blogSection} data-blog-section>
+      {/* <section style={styles.blogSection} data-blog-section>
         <div style={styles.blogContainer} data-blog-container>
           <div style={styles.blogHeader} data-blog-header>
             <h2 style={styles.sectionTitle} data-section-title>Travel Stories & Guides</h2>
@@ -369,7 +369,7 @@ export function Home() {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       {/* <section style={styles.ctaSection}>
