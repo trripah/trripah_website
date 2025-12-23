@@ -11,6 +11,7 @@ import { FaWhatsapp } from "react-icons/fa6";
 import { toast } from "sonner@2.0.3";
 import HomeImage from '../assets/bg.png';
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import DetailsData from '../data/DetailsData.json';
 
 export function Contact() {
   const navigate = useNavigate();
@@ -41,7 +42,7 @@ export function Contact() {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+91 7676 355 255", "+91 9480 553 609"],
+      details: ["+91 7676 355 255", "+91 8310 214 579"],
       action: "Call us",
       link: "tel:+91767355255",
     },
@@ -174,13 +175,9 @@ export function Contact() {
                         <SelectValue placeholder="Select a subject" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="general">General Inquiry</SelectItem>
-                        <SelectItem value="booking">Booking Assistance</SelectItem>
-                        <SelectItem value="package">Package Information</SelectItem>
-                        <SelectItem value="custom">Custom Trip Request</SelectItem>
-                        <SelectItem value="support">Customer Support</SelectItem>
-                        <SelectItem value="feedback">Feedback</SelectItem>
-                        <SelectItem value="partnership">Partnership Opportunity</SelectItem>
+                        {DetailsData.contactSubjects.map(subject => (
+                          <SelectItem key={subject.value} value={subject.value}>{subject.label}</SelectItem>
+                        ))}
                       </SelectContent>
                     </Select>
                   </div>

@@ -5,6 +5,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { Button } from "../components/ui/button";
 import HomeImage from '../assets/bg.png';
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import DetailsData from '../data/DetailsData.json';
 
 export function Destinations() {
   const navigate = useNavigate();
@@ -27,53 +28,7 @@ export function Destinations() {
   const [filterType, setFilterType] = useState("all");
   const [filterBudget, setFilterBudget] = useState("all");
 
-  const destinations = [
-    {
-      id: "thailand",
-      name: "Thailand",
-      image: "https://images.unsplash.com/flagged/photo-1575834678162-9fd77151f40b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aGFpbGFuZCUyMGJlYWNoJTIwdHJvcGljYWx8ZW58MXx8fHwxNzYxNzg3MDEzfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      description: "Tropical paradise with stunning beaches and vibrant culture",
-      packageCount: 12,
-      startingPrice: "18,999",
-      type: "Beach & Culture",
-    },
-    {
-      id: "maldives",
-      name: "Maldives",
-      image: "https://images.unsplash.com/photo-1637576308588-6647bf80944d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWxkaXZlcyUyMG92ZXJ3YXRlciUyMGJ1bmdhbG93fGVufDF8fHx8MTc2MTc5MzMwMHww&ixlib=rb-4.1.0&q=80&w=1080",
-      description: "Luxury island getaway with crystal-clear waters",
-      packageCount: 8,
-      startingPrice: "35,999",
-      type: "Luxury Beach",
-    },
-    {
-      id: "dubai",
-      name: "Dubai",
-      image: "https://images.unsplash.com/photo-1643904736472-8b77e93ca3d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkdWJhaSUyMHNreWxpbmUlMjBidXJqJTIwa2hhbGlmYXxlbnwxfHx8fDE3NjE4MDUyMzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      description: "Modern marvels and desert adventures",
-      packageCount: 10,
-      startingPrice: "24,999",
-      type: "Urban Adventure",
-    },
-    {
-      id: "bali",
-      name: "Bali",
-      image: "https://images.unsplash.com/photo-1656247203824-3d6f99461ba4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYWxpJTIwcmljZSUyMHRlcnJhY2VzfGVufDF8fHx8MTc2MTc2OTMyNnww&ixlib=rb-4.1.0&q=80&w=1080",
-      description: "Spiritual retreats and lush landscapes",
-      packageCount: 9,
-      startingPrice: "22,999",
-      type: "Culture & Nature",
-    },
-    {
-      id: "vietnam",
-      name: "Vietnam",
-      image: "https://images.unsplash.com/photo-1703555853329-b9fab31e92ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aWV0bmFtJTIwaGFsb25nJTIwYmF5fGVufDF8fHx8MTc2MTgyMDk4OHww&ixlib=rb-4.1.0&q=80&w=1080",
-      description: "Rich history and breathtaking natural wonders",
-      packageCount: 7,
-      startingPrice: "19,999",
-      type: "Adventure",
-    },
-  ];
+  const destinations = DetailsData.destinations;
 
   return (
     <div className="min-h-screen bg-gray-50">

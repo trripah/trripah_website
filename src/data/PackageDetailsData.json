@@ -1,0 +1,326 @@
+[
+  {
+    "id": "luxury-maldives-escape",
+    "title": "Luxury Maldives Escape",
+    "destination": "Maldives",
+    "category": "Luxury",
+    "duration": "5N/6D",
+    "groupSize": "2–4 People",
+    "price": "58,999",
+    "originalPrice": "72,999",
+    "rating": 4.9,
+    "reviews": 214,
+    "images": [
+      "https://images.pexels.com/photos/1320684/pexels-photo-1320684.jpeg",
+      "https://images.pexels.com/photos/1320686/pexels-photo-1320686.jpeg",
+      "https://images.pexels.com/photos/221455/pexels-photo-221455.jpeg"
+    ],
+    "overview": "Indulge in unmatched luxury surrounded by crystal-clear waters and white sandy beaches. This Maldives luxury escape offers premium villas, gourmet dining, and curated marine experiences ideal for couples or small groups.",
+    "itinerary": [
+      { "day": 1, "title": "Arrival & Villa Check-in", "description": "Arrival at Male Airport. Luxury speedboat transfer. Check-in to beach villa. Evening leisure and private dinner." ,"image": "https://images.pexels.com/photos/38238/maldives-ile-beach-sun-38238.jpeg"},
+      { "day": 2, "title": "Ocean Exploration", "description": "Breakfast. Guided snorkeling tour. Lunch. Glass-bottom kayak experience. Sunset cocktails." ,"image": "https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg"},
+      { "day": 3, "title": "Wellness Day", "description": "Breakfast. Signature spa therapy. Yoga by the beach. Free evening." ,"image": "https://images.pexels.com/photos/6724383/pexels-photo-6724383.jpeg"},
+      { "day": 4, "title": "Island Hopping", "description": "Breakfast. Visit local islands. Cultural interaction. Lunch. Resort leisure time.", "image": "https://images.pexels.com/photos/1018475/pexels-photo-1018475.jpeg" },
+      { "day": 5, "title": "Adventure & Leisure", "description": "Water sports activities. Photography session. Farewell dinner.", "image": "https://images.pexels.com/photos/2847871/pexels-photo-2847871.jpeg" },
+      { "day": 6, "title": "Departure", "description": "Breakfast. Check-out. Transfer to airport.", "image": "https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg" }
+    ],
+    "inclusions": [
+      "5 nights luxury villa stay",
+      "All meals included",
+      "Airport transfers",
+      "Spa session",
+      "Snorkeling & kayaking",
+      "Island hopping tour",
+      "Photography session",
+      "All taxes"
+    ],
+    "exclusions": [
+      "International flights",
+      "Alcohol",
+      "Travel insurance",
+      "Scuba certification",
+      "Personal expenses"
+    ],
+    "highlights": [
+      {
+        "title": "Luxury Overwater Villa Stay",
+        "image": "https://images.pexels.com/photos/1287460/pexels-photo-1287460.jpeg"
+      },
+      {
+        "title": "Fine-Dining by the Indian Ocean",
+        "image": "https://images.pexels.com/photos/10610009/pexels-photo-10610009.jpeg"
+      },
+      {
+        "title": "Private Yacht & Ocean Experiences",
+        "image": "https://images.pexels.com/photos/9200180/pexels-photo-9200180.jpeg"
+      }
+    ]
+  },
+  {
+    "id": "thailand-island-hopping",
+    "title": "Thailand Island Hopping Adventure",
+    "destination": "Thailand",
+    "category": "Island & Adventure",
+    "duration": "6N/7D",
+    "groupSize": "2–6 People",
+    "price": "42,999",
+    "originalPrice": "54,999",
+    "rating": 4.7,
+    "reviews": 312,
+    "images": [
+      "https://images.pexels.com/photos/472309/pexels-photo-472309.jpeg",
+      "https://images.pexels.com/photos/358229/pexels-photo-358229.jpeg",
+      "https://images.pexels.com/photos/1007657/pexels-photo-1007657.jpeg"
+    ],
+    "overview": "Explore Thailand’s most stunning islands including Phuket, Phi Phi, and Krabi. Perfect for beach lovers and adventure seekers.",
+    "itinerary": [
+      { "day": 1, "title": "Arrival in Phuket", "description": "Airport pickup. Hotel check-in. Evening leisure.", "image": "https://images.pexels.com/photos/472309/pexels-photo-472309.jpeg" },
+      { "day": 2, "title": "Phi Phi Islands Tour", "description": "Speedboat tour. Maya Bay. Snorkeling. Lunch.", "image": "https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg" },
+      { "day": 3, "title": "Krabi Transfer", "description": "Breakfast. Ferry transfer to Krabi. Beach walk.", "image": "https://images.pexels.com/photos/358229/pexels-photo-358229.jpeg" },
+      { "day": 4, "title": "Four Island Tour", "description": "Island hopping with snorkeling and lunch.", "image": "https://images.pexels.com/photos/1007657/pexels-photo-1007657.jpeg" },
+      { "day": 5, "title": "Adventure Day", "description": "Kayaking and cliff-view exploration.", "image": "https://images.pexels.com/photos/2847871/pexels-photo-2847871.jpeg" },
+      { "day": 6, "title": "Free Day", "description": "Shopping, spa, or beach leisure.", "image": "https://images.pexels.com/photos/3389857/pexels-photo-3389857.jpeg" },
+      { "day": 7, "title": "Departure", "description": "Airport drop-off.", "image": "https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg" }
+    ],
+    "inclusions": [
+      "6 nights hotel stay",
+      "Daily breakfast",
+      "Island tours",
+      "Speedboat rides",
+      "All transfers",
+      "Tour guide"
+    ],
+    "exclusions": [
+      "Flights",
+      "Visa fees",
+      "Meals not mentioned",
+      "Personal expenses"
+    ],
+    "highlights": [
+      {
+        "title": "Phi Phi Islands Speedboat Adventure",
+        "image": "https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg"
+      },
+      {
+        "title": "Snorkeling in Crystal Clear Waters",
+        "image": "https://images.pexels.com/photos/358229/pexels-photo-358229.jpeg"
+      },
+      {
+        "title": "Scenic Island Hopping Experience",
+        "image": "https://images.pexels.com/photos/1007657/pexels-photo-1007657.jpeg"
+      }
+    ]
+  },
+  {
+    "id": "dubai-luxury-experience",
+    "title": "Dubai Ultimate Luxury Experience",
+    "destination": "Dubai",
+    "category": "Luxury",
+    "duration": "5N/6D",
+    "groupSize": "2–5 People",
+    "price": "49,999",
+    "originalPrice": "63,999",
+    "rating": 4.8,
+    "reviews": 421,
+    "images": [
+      "https://images.pexels.com/photos/1470405/pexels-photo-1470405.jpeg",
+      "https://images.pexels.com/photos/3763190/pexels-photo-3763190.jpeg",
+      "https://images.pexels.com/photos/3680912/pexels-photo-3680912.jpeg"
+    ],
+    "overview": "Experience Dubai in ultimate style with luxury hotels, desert adventures, and iconic attractions.",
+    "itinerary": [
+      { "day": 1, "title": "Arrival & Dhow Cruise", "description": "Hotel check-in. Marina dhow dinner cruise.", "image": "https://images.pexels.com/photos/1470405/pexels-photo-1470405.jpeg" },
+      { "day": 2, "title": "City Tour", "description": "Burj Khalifa. Dubai Mall. Museum of the Future.", "image": "https://images.pexels.com/photos/3763190/pexels-photo-3763190.jpeg" },
+      { "day": 3, "title": "Desert Safari", "description": "Dune bashing. Camel ride. BBQ dinner.", "image": "https://images.pexels.com/photos/3680912/pexels-photo-3680912.jpeg" },
+      { "day": 4, "title": "Palm & Atlantis", "description": "Palm monorail. Aquaventure waterpark.", "image": "https://images.pexels.com/photos/1287460/pexels-photo-1287460.jpeg" },
+      { "day": 5, "title": "Shopping & Leisure", "description": "Gold souk. Mall of Emirates.", "image": "https://images.pexels.com/photos/10610009/pexels-photo-10610009.jpeg" },
+      { "day": 6, "title": "Departure", "description": "Airport transfer.", "image": "https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg" }
+    ],
+    "inclusions": [
+      "5-star hotel stay",
+      "Breakfast",
+      "Desert safari",
+      "Dhow cruise dinner",
+      "City tours",
+      "All transfers"
+    ],
+    "exclusions": [
+      "Flights",
+      "Visa",
+      "Personal expenses",
+      "Optional activities"
+    ],
+    "highlights": [
+      {
+        "title": "Burj Khalifa & Iconic Skyline Views",
+        "image": "https://images.pexels.com/photos/3763190/pexels-photo-3763190.jpeg"
+      },
+      {
+        "title": "Desert Safari & Camel Ride Adventure",
+        "image": "https://images.pexels.com/photos/3680912/pexels-photo-3680912.jpeg"
+      },
+      {
+        "title": "Dhow Cruise Dinner Experience",
+        "image": "https://images.pexels.com/photos/1470405/pexels-photo-1470405.jpeg"
+      }
+    ]
+  },
+  {
+    "id": "bali-cultural-retreat",
+    "title": "Bali Cultural & Beach Retreat",
+    "destination": "Bali",
+    "category": "Leisure",
+    "duration": "6N/7D",
+    "groupSize": "2–6 People",
+    "price": "38,999",
+    "originalPrice": "49,999",
+    "rating": 4.7,
+    "reviews": 289,
+    "images": [
+      "https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg",
+      "https://images.pexels.com/photos/413958/pexels-photo-413958.jpeg",
+      "https://images.pexels.com/photos/1477310/pexels-photo-1477310.jpeg"
+    ],
+    "overview": "Discover Bali’s rich culture, lush landscapes, and serene beaches.",
+    "itinerary": [
+      { "day": 1, "title": "Arrival", "description": "Hotel check-in. Evening leisure.", "image": "https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg" },
+      { "day": 2, "title": "Ubud Tour", "description": "Rice terraces. Monkey forest. Art villages.", "image": "https://images.pexels.com/photos/413958/pexels-photo-413958.jpeg" },
+      { "day": 3, "title": "Temple Visits", "description": "Tanah Lot and Uluwatu temples.", "image": "https://images.pexels.com/photos/1477310/pexels-photo-1477310.jpeg" },
+      { "day": 4, "title": "Water Activities", "description": "Snorkeling and beach leisure.", "image": "https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg" },
+      { "day": 5, "title": "Free Day", "description": "Spa or shopping.", "image": "https://images.pexels.com/photos/6724383/pexels-photo-6724383.jpeg" },
+      { "day": 6, "title": "Nusa Penida Tour", "description": "Island sightseeing.", "image": "https://images.pexels.com/photos/1018475/pexels-photo-1018475.jpeg" },
+      { "day": 7, "title": "Departure", "description": "Airport drop-off.", "image": "https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg" }
+    ],
+    "inclusions": [
+      "Hotel stay",
+      "Daily breakfast",
+      "Sightseeing tours",
+      "Airport transfers"
+    ],
+    "exclusions": [
+      "Flights",
+      "Visa",
+      "Lunch & dinner",
+      "Personal expenses"
+    ],
+    "highlights": [
+      {
+        "title": "Ubud Rice Terraces & Monkey Forest",
+        "image": "https://images.pexels.com/photos/413958/pexels-photo-413958.jpeg"
+      },
+      {
+        "title": "Ancient Temple Experiences",
+        "image": "https://images.pexels.com/photos/1477310/pexels-photo-1477310.jpeg"
+      },
+      {
+        "title": "Scenic Beach & Island Adventures",
+        "image": "https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg"
+      }
+    ]
+  },
+  {
+    "id": "vietnam-discovery-tour",
+    "title": "Vietnam Discovery Tour",
+    "destination": "Vietnam",
+    "category": "Cultural",
+    "duration": "7N/8D",
+    "groupSize": "2–8 People",
+    "price": "41,999",
+    "originalPrice": "53,999",
+    "rating": 4.6,
+    "reviews": 198,
+    "images": [
+      "https://images.pexels.com/photos/1660996/pexels-photo-1660996.jpeg",
+      "https://images.pexels.com/photos/980221/pexels-photo-980221.jpeg",
+      "https://images.pexels.com/photos/2965773/pexels-photo-2965773.jpeg"
+    ],
+    "overview": "A journey through Vietnam’s iconic cities, heritage sites, and scenic landscapes.",
+    "itinerary": [
+      { "day": 1, "title": "Hanoi Arrival", "description": "City orientation.", "image": "https://images.pexels.com/photos/1660996/pexels-photo-1660996.jpeg" },
+      { "day": 2, "title": "Hanoi City Tour", "description": "Old Quarter. Hoan Kiem Lake.", "image": "https://images.pexels.com/photos/980221/pexels-photo-980221.jpeg" },
+      { "day": 3, "title": "Halong Bay Cruise", "description": "Overnight cruise.", "image": "https://images.pexels.com/photos/2965773/pexels-photo-2965773.jpeg" },
+      { "day": 4, "title": "Da Nang Transfer", "description": "Flight transfer.", "image": "https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg" },
+      { "day": 5, "title": "Hoi An Tour", "description": "Ancient town walk.", "image": "https://images.pexels.com/photos/358229/pexels-photo-358229.jpeg" },
+      { "day": 6, "title": "Beach Leisure", "description": "Free day.", "image": "https://images.pexels.com/photos/1007657/pexels-photo-1007657.jpeg" },
+      { "day": 7, "title": "Ho Chi Minh Tour", "description": "Cu Chi tunnels.", "image": "https://images.pexels.com/photos/2847871/pexels-photo-2847871.jpeg" },
+      { "day": 8, "title": "Departure", "description": "Airport drop-off.", "image": "https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg" }
+    ],
+    "inclusions": [
+      "Hotel & cruise stay",
+      "Breakfast",
+      "Domestic flights",
+      "Guided tours",
+      "Transfers"
+    ],
+    "exclusions": [
+      "International flights",
+      "Visa",
+      "Personal expenses"
+    ],
+    "highlights": [
+      {
+        "title": "Halong Bay Cruise Experience",
+        "image": "https://images.pexels.com/photos/2965773/pexels-photo-2965773.jpeg"
+      },
+      {
+        "title": "Hanoi Old Quarter & Heritage Sites",
+        "image": "https://images.pexels.com/photos/980221/pexels-photo-980221.jpeg"
+      },
+      {
+        "title": "Hoi An Ancient Town & Cu Chi Tunnels",
+        "image": "https://images.pexels.com/photos/1660996/pexels-photo-1660996.jpeg"
+      }
+    ]
+  },
+  {
+    "id": "thailand-family-fun",
+    "title": "Thailand Family Fun Package",
+    "destination": "Thailand",
+    "category": "Family",
+    "duration": "5N/6D",
+    "groupSize": "3–6 People",
+    "price": "36,999",
+    "originalPrice": "47,999",
+    "rating": 4.5,
+    "reviews": 365,
+    "images": [
+      "https://images.pexels.com/photos/937465/pexels-photo-937465.jpeg",
+      "https://images.pexels.com/photos/208444/pexels-photo-208444.jpeg",
+      "https://images.pexels.com/photos/327494/pexels-photo-327494.jpeg"
+    ],
+    "overview": "A family-focused Thailand holiday combining entertainment, sightseeing, and relaxation.",
+    "itinerary": [
+      { "day": 1, "title": "Arrival Bangkok", "description": "Hotel check-in.", "image": "https://images.pexels.com/photos/937465/pexels-photo-937465.jpeg" },
+      { "day": 2, "title": "Safari World", "description": "Marine park and safari.", "image": "https://images.pexels.com/photos/208444/pexels-photo-208444.jpeg" },
+      { "day": 3, "title": "Bangkok to Pattaya", "description": "Transfer. Alcazar show.", "image": "https://images.pexels.com/photos/327494/pexels-photo-327494.jpeg" },
+      { "day": 4, "title": "Coral Island Tour", "description": "Beach activities.", "image": "https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg" },
+      { "day": 5, "title": "Shopping Day", "description": "Local markets.", "image": "https://images.pexels.com/photos/358229/pexels-photo-358229.jpeg" },
+      { "day": 6, "title": "Departure", "description": "Airport transfer.", "image": "https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg" }
+    ],
+    "inclusions": [
+      "Family-friendly hotels",
+      "Daily breakfast",
+      "Theme park tickets",
+      "Transfers"
+    ],
+    "exclusions": [
+      "Flights",
+      "Visa",
+      "Personal expenses"
+    ],
+    "highlights": [
+      {
+        "title": "Safari World Adventure Park",
+        "image": "https://images.pexels.com/photos/208444/pexels-photo-208444.jpeg"
+      },
+      {
+        "title": "Coral Island Beach Paradise",
+        "image": "https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg"
+      },
+      {
+        "title": "Family-Friendly Entertainment & Shows",
+        "image": "https://images.pexels.com/photos/327494/pexels-photo-327494.jpeg"
+      }
+    ]
+  }
+]

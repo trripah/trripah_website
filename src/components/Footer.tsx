@@ -8,6 +8,7 @@ export function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
+        
         <div className={styles.grid}>
           {/* Brand */}
           <div className={styles.brandSection}>
@@ -44,6 +45,15 @@ export function Footer() {
               </a> */}
             </div>
           </div>
+          <div className={styles.mobileButtonSection}>
+          <button className={styles.whatsappButton}>WhatsApp us</button>
+          <button 
+            className={styles.planTripButton}
+            onClick={() => navigate("/custom-trip")}
+          >
+            Plan my trip
+          </button>
+        </div>
 
           {/* Quick Links */}
           <div className={styles.section}>

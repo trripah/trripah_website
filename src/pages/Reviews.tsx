@@ -4,101 +4,33 @@ import { Card, CardContent } from "../components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
 import { Progress } from "../components/ui/progress";
 import { Star } from "lucide-react";
+import DetailsData from '../data/DetailsData.json';
 
 export function Reviews() {
   const [filterRating, setFilterRating] = useState("all");
   const [filterDestination, setFilterDestination] = useState("all");
 
-  const testimonials = [
-    {
-      name: "Priya & Rahul Sharma",
-      location: "Mumbai, India",
-      rating: 5,
-      comment: "trripah made our honeymoon in Maldives absolutely magical! Every detail was perfect, from the overwater villa to the romantic dinners. The team was responsive and helpful throughout our trip. Highly recommended!",
-      tripDestination: "Maldives",
-      image: "https://images.unsplash.com/photo-1617153374846-6ebdc6369941?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWFjaCUyMHN1bnNldCUyMGNvdXBsZXxlbnwxfHx8fDE3NjE4MTMyMzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    },
-    {
-      name: "Amit Kumar",
-      location: "Delhi, India",
-      rating: 5,
-      comment: "Best Thailand trip ever! The itinerary was well-planned with a perfect mix of adventure and relaxation. Our guide was knowledgeable and the accommodations exceeded expectations. Worth every penny!",
-      tripDestination: "Thailand",
-      image: "https://images.unsplash.com/photo-1709572366321-524da39b27e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmF2ZWwlMjBhZHZlbnR1cmUlMjBoYXBweSUyMHRvdXJpc3RzfGVufDF8fHx8MTc2MTgyMDk4OHww&ixlib=rb-4.1.0&q=80&w=1080",
-    },
-    {
-      name: "Sneha Patel",
-      location: "Bangalore, India",
-      rating: 5,
-      comment: "Dubai was a dream come true! Everything from flights to hotels was seamless. The desert safari and Burj Khalifa visit were highlights. trripah's customer service is top-notch!",
-      tripDestination: "Dubai",
-      image: "https://images.unsplash.com/photo-1722409195473-d322e99621e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjByZXNvcnQlMjBwb29sfGVufDF8fHx8MTc2MTc0MzI5NXww&ixlib=rb-4.1.0&q=80&w=1080",
-    },
-    {
-      name: "Vikram & Family",
-      location: "Pune, India",
-      rating: 5,
-      comment: "Amazing family vacation to Bali! The kids loved the water parks and we enjoyed the cultural tours. trripah accommodated all our special requests. Excellent service!",
-      tripDestination: "Bali",
-      image: "https://images.unsplash.com/photo-1656247203824-3d6f99461ba4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYWxpJTIwcmljZSUyMHRlcnJhY2VzfGVufDF8fHx8MTc2MTc2OTMyNnww&ixlib=rb-4.1.0&q=80&w=1080",
-    },
-    {
-      name: "Neha Reddy",
-      location: "Hyderabad, India",
-      rating: 4,
-      comment: "Wonderful Vietnam tour! Ha Long Bay cruise was breathtaking and Hanoi streets were vibrant. Only minor hiccup was a delayed transfer, but support team handled it quickly.",
-      tripDestination: "Vietnam",
-      image: "https://images.unsplash.com/photo-1703555853329-b9fab31e92ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aWV0bmFtJTIwaGFsb25nJTIwYmF5fGVufDF8fHx8MTc2MTgyMDk4OHww&ixlib=rb-4.1.0&q=80&w=1080",
-    },
-    {
-      name: "Karan & Divya",
-      location: "Ahmedabad, India",
-      rating: 5,
-      comment: "Perfect anniversary trip to Maldives! The resort was stunning and activities were well-organized. trripah surprised us with complimentary spa treatment. Unforgettable experience!",
-      tripDestination: "Maldives",
-      image: "https://images.unsplash.com/photo-1637576308588-6647bf80944d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWxkaXZlcyUyMG92ZXJ3YXRlciUyMGJ1bmdhbG93fGVufDF8fHx8MTc2MTc5MzMwMHww&ixlib=rb-4.1.0&q=80&w=1080",
-    },
-    {
-      name: "Rajesh Gupta",
-      location: "Kolkata, India",
-      rating: 5,
-      comment: "Solo trip to Thailand was amazing! trripah arranged everything perfectly. Met other travelers, explored islands, and made great memories. Felt safe throughout the journey.",
-      tripDestination: "Thailand",
-      image: "https://images.unsplash.com/flagged/photo-1575834678162-9fd77151f40b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aGFpbGFuZCUyMGJlYWNoJTIwdHJvcGljYWx8ZW58MXx8fHwxNzYxNzg3MDEzfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    },
-    {
-      name: "Ananya Singh",
-      location: "Chennai, India",
-      rating: 5,
-      comment: "Luxury Dubai package exceeded all expectations! From the 5-star hotel to private tours, everything was world-class. trripah's attention to detail is remarkable.",
-      tripDestination: "Dubai",
-      image: "https://images.unsplash.com/photo-1643904736472-8b77e93ca3d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkdWJhaSUyMHNreWxpbmUlMjBidXJqJTIwa2hhbGlmYXxlbnwxfHx8fDE3NjE4MDUyMzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    },
-    {
-      name: "Aditya Malhotra",
-      location: "Jaipur, India",
-      rating: 4,
-      comment: "Great Bali experience! Beautiful beaches, temples, and rice terraces. Food was delicious. Would have loved one more day in Ubud but overall fantastic trip!",
-      tripDestination: "Bali",
-      image: "https://images.unsplash.com/photo-1656247203824-3d6f99461ba4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYWxpJTIwcmljZSUyMHRlcnJhY2VzfGVufDF8fHx8MTc2MTc2OTMyNnww&ixlib=rb-4.1.0&q=80&w=1080",
-    },
-  ];
+  const reviewsStyles = `
+    @media (min-width: 1024px) {
+      .reviews-rating,
+      .reviews-grid,
+      .reviews-trust {
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+    }
+  `;
 
-  const ratingBreakdown = [
-    { stars: 5, count: 142, percentage: 91 },
-    { stars: 4, count: 12, percentage: 8 },
-    { stars: 3, count: 2, percentage: 1 },
-    { stars: 2, count: 0, percentage: 0 },
-    { stars: 1, count: 0, percentage: 0 },
-  ];
-
-  const totalReviews = 156;
-  const averageRating = 4.9;
+  const testimonials = DetailsData.reviews;
+  const ratingBreakdown = DetailsData.ratingBreakdown;
+  const totalReviews = DetailsData.reviewStats.totalReviews;
+  const averageRating = DetailsData.reviewStats.averageRating;
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <style>{reviewsStyles}</style>
       {/* Hero */}
-      <section className="bg-gradient-to-r from-[#004C91] to-[#003366] text-white py-20">
+      <section className="bg-gradient-to-r from-[#004C91] to-[#003366] text-white py-20" style={{ marginTop: '-5rem', paddingTop: '6rem' }}>
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-white mb-4">Customer Reviews</h1>
           <p className="text-white/90 max-w-2xl mx-auto">
@@ -108,7 +40,7 @@ export function Reviews() {
       </section>
 
       {/* Overall Rating */}
-      <section className="py-16">
+      <section className="py-16 px-4 reviews-rating" >
         <div className="container mx-auto px-4">
           <Card className="max-w-4xl mx-auto mb-12">
             <CardContent className="p-8">
@@ -187,7 +119,7 @@ export function Reviews() {
           </div>
 
           {/* Reviews Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reviews-grid">
             {testimonials.map((testimonial, index) => (
               <TestimonialCard key={index} {...testimonial} />
             ))}
@@ -196,7 +128,7 @@ export function Reviews() {
       </section>
 
       {/* Trust Indicators */}
-      <section className="py-16 bg-[#FFF3E0]">
+      <section className="py-16 bg-[#FFF3E0] px-4 reviews-trust">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-center mb-12">Why Travelers Trust trripah</h2>
