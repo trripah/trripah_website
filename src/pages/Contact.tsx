@@ -41,7 +41,7 @@ export function Contact() {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+91 7676 355 255", "+91 8310 214 579"],
+      details: ["+91 7676 355 255", "+91 9480 553 609"],
       action: "Call us",
       link: "tel:+91767355255",
     },
